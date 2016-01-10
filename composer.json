@@ -36,7 +36,7 @@
     "scripts": {
         "compile": [
             "# Executed prior to deploy by the buildpack",
-            "rm web/app_dev.php web/config.php"
+            "rm -f web/app_dev.php web/config.php"
         ],
         "cs": "php-cs-fixer fix",
         "post-install-cmd": [
