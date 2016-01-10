@@ -1,0 +1,15 @@
+{
+    "name": "cs278/website",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "*.md",
+        "node_modules",
+        "bower_components",
+        "web/components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+    }
+}
