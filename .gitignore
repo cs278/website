@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /bin/symfony_requirements
+/node_modules
 /phpunit.xml
 /vendor
 /web/bundles
