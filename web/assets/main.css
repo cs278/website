@@ -40,11 +40,11 @@ a:focus {
     }
 
     #body {
-        min-height: calc(100vh - 170px - 200px);
+        min-height: calc(100vh - 170px - 70px);
     }
 
     #foot {
-        height: 200px;
+        height: 70px;
         background: #409cb1;
         color: #fff;
     }
