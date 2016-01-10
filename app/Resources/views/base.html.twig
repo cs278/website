@@ -49,7 +49,10 @@
             <div class="footer-sink">
                 <p><small>{{ block('copyright') }}.</small></p>
                 <p><small>
-                    Powered by <a href="http://symfony.com/" rel="external" title="Symfony website">Symfony</a> and friends.
+                    Powered by
+                    <a href="http://symfony.com/" rel="external" title="Symfony website">Symfony</a>,
+                    {{ 'PHP %u.%u'|format(constant('PHP_MAJOR_VERSION'), constant('PHP_MINOR_VERSION')) }},
+                    and friends.
                 </small></p>
             </div>
             {# <p><small><code>{{ '%7.7s'|format(git.sha1) }}</code></small></p> #}
