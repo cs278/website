@@ -1,0 +1,109 @@
+/**
+ * http://paletton.com/#uid=7050u0kpBw0fFJEkXBhv6t0wcmo
+ */
+
+html {
+    font-family: Roboto, 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+}
+
+a {
+    color: #ff4b33;
+}
+
+a:hover, a:active, a:focus {
+    color: #26bf4e;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.lead {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .page-content {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0 50px;
+        min-height: 100%;
+        background: #eee;
+        overflow: hidden;
+    }
+
+    #head {
+        height: 170px;
+    }
+
+    #body {
+        min-height: calc(100vh - 170px - 200px);
+    }
+
+    #foot {
+        height: 200px;
+        background: #409cb1;
+        color: #fff;
+    }
+
+    #foot > .page-content {
+        background: #035a6e;
+        position: relative;
+    }
+
+    #foot p {
+        margin: 7px 0 3.5px;
+        line-height: 1;
+    }
+
+    #foot a {
+        color: #fff;
+    }
+
+    #foot a:hover,
+    #foot a:active,
+    #foot a:focus {
+        color: #ff4b33;
+    }
+
+    .footer-elsewhere {
+    }
+
+    .footer-elsewhere > li {
+        display: inline-block;
+
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .footer-elsewhere a {
+        display: block;
+        padding: 0 20px;
+        background: #035A6E;
+    }
+
+    #foot .footer-elsewhere a:hover {
+        background: #ff4b33;
+        color: #fff;
+    }
+
+    .footer-sink {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .header-heading {
+        margin: 50px 0 0 0;
+        font-size: 4rem;
+    }
+
+    .header-strapline {
+        margin: 0;
+        font-style: italic;
+        font-size: 0.95rem;
+    }
+}

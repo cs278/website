@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html class="no-js" lang="en-gb">
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}Chris Smith — {% block subtitle %}Home{% endblock %}{% endblock %}</title>
+    <meta name="generator" content="Symfony 3.0">
+    <meta name="description" content="">
+    <meta name="author" content="Chris Smith">
+    <meta name="copyright" content="{%- block copyright -%}© 2006–2016 Chris Smith{%- endblock -%}">
+
+    <meta name="DC.title" content="{{ block('title') }}">
+    <meta name="DC.subject" content="Personal website of Chris Smith">
+    <meta name="DC.creator" content="Chris Smith">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="{{ asset('assets/normalize.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/helpers.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/main.css')}}">
+
+    {% block stylesheets %}
+    {% endblock %}
+
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+</head>
+<body>
+    <header class="page-content" id="head">
+        <h1 class="header-heading">Chris Smith</h1>
+        <p class="header-strapline">Metal listener, software developer, gamer, and open source contributor.</p>
+    </header>
+    <main class="page-content" id="body" role="main">
+    {% block body %}{% endblock %}
+    </main>
+    <footer id="foot">
+        <div class="page-content">
+            <ul class="list-inline footer-elsewhere">
+                <li class="facebook"><a href="https://www.facebook.com/cs278" title="Birthday reminder tool." rel="me external">Facebook</a></li>
+                <li class="twitter"><a href="https://twitter.com/cs278" title="Tweets (or nonsense.)" rel="me external">Twitter</a></li>
+                <li class="google"><a href="https://plus.google.com/u/0/116435328820757796119" title="Circles and pluses." rel="me external">Google+</a></li>
+                <li class="github"><a href="https://github.com/cs278" title="Fork!" rel="me external">GitHub</a></li>
+                <li class="lastfm"><a href="http://www.last.fm/user/cstoonarmy" title="My scrobbles." rel="me external">Last.fm</a></li>
+                <li class="youtube"><a href="https://www.youtube.com/user/cstoonarmy" title="Cat videos." rel="me external">YouTube</a></li>
+                <li class="folding">
+                    <a href="http://fah-web.stanford.edu/cgi-bin/main.py?qtype=userpage&username=cs278&teamnum=35947" title="I protein fold." rel="me external">Folding</a>
+                </li>
+                <li class="steam"><a href="http://steamcommunity.com/id/cs278/" title="Gaming." rel="me external">Steam</a></li>
+            </ul>
+            <div class="footer-sink">
+                <p><small>{{ block('copyright') }}.</small></p>
+                <p><small>
+                    Powered by <a href="http://symfony.com/" rel="external" title="Symfony website">Symfony</a> and friends.
+                </small></p>
+            </div>
+            {# <p><small><code>{{ '%7.7s'|format(git.sha1) }}</code></small></p> #}
+        </div>
+    </footer>
+</body>
 </html>
