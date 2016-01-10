@@ -31,10 +31,12 @@
         "incenteev/composer-parameter-handler": "^2.0"
     },
     "require-dev": {
+        "cs278/coding-standard": "^1.0.0",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^2.7"
     },
     "scripts": {
+        "cs": "php-cs-fixer fix",
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
