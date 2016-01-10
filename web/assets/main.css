@@ -69,28 +69,6 @@ a:focus {
         color: #ff4b33;
     }
 
-    .footer-elsewhere {
-    }
-
-    .footer-elsewhere > li {
-        display: inline-block;
-
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-    }
-
-    .footer-elsewhere a {
-        display: block;
-        padding: 0 20px;
-        background: #035A6E;
-    }
-
-    #foot .footer-elsewhere a:hover {
-        background: #ff4b33;
-        color: #fff;
-    }
-
     .footer-sink {
         position: absolute;
         bottom: 10px;
