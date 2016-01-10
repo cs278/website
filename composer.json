@@ -1,0 +1,13 @@
+{
+    "name": "cs278/website",
+    "description": "My personal website.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Smith",
+            "email": "chris@cs278.org"
+        }
+    ],
+    "require": {}
+}
