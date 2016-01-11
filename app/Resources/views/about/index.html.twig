@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% import 'links.html.twig' as links %}
+
+{% block subtitle %}About{% endblock %}
+
+{#
+{% block sidebar %}
+    <aside id="contact">
+        <h1>Contact</h1>
+        <p>
+        <ul>
+            <li class="email" title="E-Mail">chris@<a href="http://www.google.com/recaptcha/mailhide/d?k=01Yv6HWfU6qDIwt-SfbsmK1Q==&amp;c=yuBbnRiD2_draxhqC7uSAw==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Yv6HWfU6qDIwt-SfbsmK1Q\75\75\46c\75yuBbnRiD2_draxhqC7uSAw\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Oh please! You can probably guess this.">…</a></li>
+            <li class="xmpp" title="Extensible Messaging and Presence Protocol">toonarmy@jabber.org</li>
+            <li class="wlm" title="Windows Live Messenger">im@chris.cs278.org</li>
+            <li class="aim" title="AOL Instant Messenger">cs278dotorg</li>
+            <li class="skype" title="Skype">cs278.</li>
+            <li class="irc" title="IRC">cs278 on <!-- <a href="http://freenode.net/"> -->Freenode<!--</a>--></li>
+        </ul>
+    </aside>
+
+    {{ parent() }}
+{% endblock %}
+#}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+    <script>
+    // <![CDATA[
+    jQuery(function($)
+    {
+        $('[href="#contact"]').click(function()
+        {
+            $('#contact').effect('highlight');
+        });
+    });
+    // ]]>
+    </script>
+{% endblock %}
+
+{% block body %}
+<article>
+    <h1>Chris Smith</h1>
+
+    <h2>Briefly</h2>
+    <p>
+        I am a twenty-something year old computer science graduate living in the
+        West Midlands of the {{ links.wikipedia('United Kingdom') }},
+        in a town called {{ links.wikipedia('Redditch') }}.
+        I previously studied at the <a href="http://www.exeter.ac.uk/" rel="external">University of Exeter</a>
+        in the <a href="http://secam.exeter.ac.uk/" rel="external">School of Engineering, Computing, and Mathematics</a>.
+        I originally hail from {{ links.wikipedia('South Gloucestershire') }},
+        north of {{ links.wikipedia('Bristol') }},
+        where I had lived all my life until September 2010. I have relatives in
+        the North East, {{ links.wikipedia('Gateshead') }}
+        more specifically; and in the South East, London in fact. I attended
+        <a href="http://www.marlwood.com/" rel="external">Marlwood School and Sixth Form</a>,
+        for both my compulsory secondary education and advanced level studies.
+    </p>
+
+    <h2>Why <code>cs278.org</code>?</h2>
+    <p>
+        I have been running my weblog
+        for over five years now, I started out using a DynDNS domain and hosting it from my bedroom.
+        Time passed and I took the plunge and decided to purchase myself a domain and some hosting
+        to go with it, but I needed a domain name. I’d recently started at university and had been
+        assigned the username <code>cs278</code> so I stuck with it.
+    </p>
+    <p>
+        I kept a blog as an interesting    way to record my thoughts
+        <span style="text-decoration: line-through;">and share them with the world</span>.
+        I have never been good at keeping a diary, this is no exception, but it is
+        substantially better maintained than any diary I have ever tried to keep!
+    </p>
+
+    <h2>Hobbies/Interests</h2>
+    <p>
+        I enjoy <a href="{# { route('photography/index.twig') } #}">photography</a>, camping, rock climbing,
+        canoeing, walking, pool, fencing and swimming, I guess you could say I like the outdoors.
+    </p>
+    <p>
+        I’m very keen on  my <a href="http://www.last.fm/user/cstoonarmy/" rel="external">music</a> and
+        I am almost always listening to something. I am without a doubt a Rock and Heavy Metal fan, although
+        I am fairly open to other genres. I do occasionally listen to some classical music and the odd pop track.
+    </p>
+    <p>
+        I love watching films; but I rarely have any recollection of the films I’ve seen.
+        In addition to films I am very fond of some TV series, those that stand to mind are;
+        {{ links.wikipedia('QI') }},
+        {{ links.wikipedia('House', 'House (TV series)') }},
+        {{ links.wikipedia('Top Gear') }},
+        {{ links.wikipedia('Bones', 'Bones (TV series)') }}, and
+        {{ links.wikipedia('CSI', 'CSI: Crime Scene Investigation') }}.
+        All of which are vastly improved by the ultimate audio visual indulgence;
+        a series marathon!
+    </p>
+    <p>
+       Finally nothing can beat a good old frag–fest, I have enjoyed
+       <a href="http://steamcommunity.com/id/cs278/" rel="external">video games</a> since I was a child.
+       My favourites include
+       {{ links.wikipedia('Supreme Commander', 'Supreme Commander: Forged Alliance') }},
+       {{ links.wikipedia('Unreal Tournament') }},
+       {{ links.wikipedia('Left 4 Dead') }},
+       {{ links.wikipedia('Diablo II') }},
+       {{ links.wikipedia('Command & Conquer: Red Alert') }},
+       {{ links.wikipedia('Plants vs. Zombies') }}, and
+       {{ links.wikipedia('Grand Theft Auto', 'Grand Theft Auto (series)') }}.
+    </p>
+
+    <h2 id="projects">Projects</h2>
+    <p>
+        I have been an active member of a number of projects over the years, some of which are defunct
+        now and no longer grace the Earth with their presence. I am currently contributing to
+        <a href="http://www.phpbb.com/" rel="external">phpBB</a> as a member of their development team.
+        I was previously involved in my <a href="http://www.exeter.ac.uk/" rel="external">universities</a>
+        student media website – <a href="http://xmedia.ex.ac.uk/" rel="external">X-Media Online</a>.
+    </p>
+
+    <h3 id="website">Website</h3>
+    <p>
+        I wrote this website myself leveraging the cream of open source technology. This website would
+        not be possible without the following projects and their contributors.
+    </p>
+
+    <ul>
+        <li>{{ links.external('http://www.debian.org/', 'Debian') }}</li>
+        <li>{{ links.external('http://nginx.org/en/', 'nginx') }}</li>
+        <li>{{ links.external('http://varnish-cache.org/', 'Varnish') }}</li>
+        <li>{{ links.external('http://www.php.net/', 'PHP') }}</li>
+        <li>{{ links.external('http://mysql.com/', 'MySQL') }}</li>
+        <li>{{ links.external('http://symfony.com/', 'Symfony') }}</li>
+        <li>{{ links.external('http://framework.zend.com/zf2', 'Zend Framework') }}</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+        If you would like to contact me I’ve obviously not done enough to scare you off or you
+        are a spam bot. You can find my <a href="#contact">details</a> over on the right. One
+        final note; if are working for a <em>recruitment agency</em>, I <em>won’t</em> be best
+        pleased to receive an email from you.
+    </p>
+</article>
+{% endblock %}

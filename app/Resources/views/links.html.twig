@@ -1,0 +1,17 @@
+{%- macro wikipedia(text, article) -%}
+    {%- set slug = article
+        |default(text)
+        |replace({' ': '_'})
+        |url_encode
+        |replace({'%28': '(', '%29': ')'})
+    -%}
+    <a href="https://en.wikipedia.org/wiki/{{ slug }}" rel="external">{{ text }}</a>
+{%- endmacro -%}
+
+{%- macro external(url, text) -%}
+    <a href="{{ url }}" rel="external">{{ text|default(url) }}</a>
+{%- endmacro -%}
+
+{%- macro externalme(url, text) -%}
+    <a href="{{ url }}" rel="external me">{{ text|default(url) }}</a>
+{%- endmacro -%}
