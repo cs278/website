@@ -15,3 +15,21 @@
 {%- macro externalme(url, text) -%}
     <a href="{{ url }}" rel="external me">{{ text|default(url) }}</a>
 {%- endmacro -%}
+
+{%- macro github(label, org, repo) -%}
+    {% set url = 'https://github.com/%s/%s'|format(
+        org|default(label|lower|url_encode),
+        repo|default(label|lower|url_encode)
+    ) %}
+
+    <a href="{{ url }}" rel="external">{{ label }}</a>
+{%- endmacro -%}
+
+{%- macro github_contribs(label, org, repo) -%}
+    {% set url = 'https://github.com/%s/%s'|format(
+        org|default(label|lower|url_encode),
+        repo|default(label|lower|url_encode)
+    ) %}
+
+    <a href="{{ url }}/commits?author=cs278" rel="external">{{ label }}</a>
+{%- endmacro -%}

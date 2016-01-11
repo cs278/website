@@ -41,19 +41,20 @@
 
 {% block body %}
 <article>
-    <h1>Chris Smith</h1>
+    <h1>Me</h1>
 
     <h2>Briefly</h2>
     <p>
         I am a twenty-something year old computer science graduate living in the
         West Midlands of the {{ links.wikipedia('United Kingdom') }},
         in a town called {{ links.wikipedia('Redditch') }}.
-        I previously studied at the <a href="http://www.exeter.ac.uk/" rel="external">University of Exeter</a>
-        in the <a href="http://secam.exeter.ac.uk/" rel="external">School of Engineering, Computing, and Mathematics</a>.
+        I previously studied
+        {{ links.external('http://emps.exeter.ac.uk/computer-science/', 'Computer Science') }} at the
+        <a href="http://www.exeter.ac.uk/" rel="external">University of Exeter</a>.
         I originally hail from {{ links.wikipedia('South Gloucestershire') }},
         north of {{ links.wikipedia('Bristol') }},
-        where I had lived all my life until September 2010. I have relatives in
-        the North East, {{ links.wikipedia('Gateshead') }}
+        where I had lived all my life until September 2010. My family originates from
+        the North East of England, {{ links.wikipedia('Gateshead') }}
         more specifically; and in the South East, London in fact. I attended
         <a href="http://www.marlwood.com/" rel="external">Marlwood School and Sixth Form</a>,
         for both my compulsory secondary education and advanced level studies.
@@ -67,23 +68,41 @@
         to go with it, but I needed a domain name. I’d recently started at university and had been
         assigned the username <code>cs278</code> so I stuck with it.
     </p>
+    {#
     <p>
-        I kept a blog as an interesting    way to record my thoughts
-        <span style="text-decoration: line-through;">and share them with the world</span>.
+        I kept a blog as an interesting way to record my thoughts
+        <del>and share them with the world</del>.
         I have never been good at keeping a diary, this is no exception, but it is
         substantially better maintained than any diary I have ever tried to keep!
     </p>
+    #}
 
     <h2>Hobbies/Interests</h2>
-    <p>
-        I enjoy <a href="{# { route('photography/index.twig') } #}">photography</a>, camping, rock climbing,
-        canoeing, walking, pool, fencing and swimming, I guess you could say I like the outdoors.
-    </p>
+    {% set scrobbles = 348446 %}
+    {# Conservative fudge for non scrobbled plays: cars, crap players, broken config #}
+    {% set totalTracks = (scrobbles * 1.2)|round %}
+    {% set totalLength = (totalTracks * 4 / 60 / 24)|round %}
     <p>
         I’m very keen on  my <a href="http://www.last.fm/user/cstoonarmy/" rel="external">music</a> and
-        I am almost always listening to something. I am without a doubt a Rock and Heavy Metal fan, although
-        I am fairly open to other genres. I do occasionally listen to some classical music and the odd pop track.
+        I am almost always listening to something. I am without a doubt a Rock and Heavy Metal fan,
+        although I am fairly open to other genres. I do occasionally listen to some classical music and
+        the odd pop track. I have been scrobbling my music for over 10 years and in that time I have
+        listened to approximately {{ totalTracks }} tracks or about {{ totalLength }} days of music!
+        Gigs are a <a href="http://www.setlist.fm/concerts/cs278" rel="external">big part</a> of my
+        musical experience and I have been fortunate to see some brilliant performances, those that are
+        especially memorable:
     </p>
+    <ul>
+        {% set gigs = [
+            ['Nightwish', 'Greek Theatre, Los Angeles', 'Greek Theatre (Los Angeles)'],
+            ['Foo Fighters', 'National Bowl'],
+            ['David Gilmour', 'Royal Albert Hall'],
+        ] %}
+        <li>{{ links.wikipedia('SOiL') }} — Bristol Bierkeller</li>
+        {% for gig in gigs %}
+        <li>{{ links.wikipedia(gig[0]) }} — {{ links.wikipedia(gig[1], gig[2]|default) }}</li>
+        {% endfor %}
+    </ul>
     <p>
         I love watching films; but I rarely have any recollection of the films I’ve seen.
         In addition to films I am very fond of some TV series, those that stand to mind are;
@@ -96,9 +115,12 @@
         a series marathon!
     </p>
     <p>
-       Finally nothing can beat a good old frag–fest, I have enjoyed
-       <a href="http://steamcommunity.com/id/cs278/" rel="external">video games</a> since I was a child.
+       Finally nothing can beat a good old frag–fest, I have enjoyed video games since I was a child.
        My favourites include
+       {{ links.wikipedia('KSP', 'Kerbal Space Program') }},
+       {{ links.wikipedia('Borderlands 2') }},
+       {{ links.wikipedia('Killing Floor', 'Killing Floor (video game)') }},
+       {{ links.wikipedia('Rocket League') }},
        {{ links.wikipedia('Supreme Commander', 'Supreme Commander: Forged Alliance') }},
        {{ links.wikipedia('Unreal Tournament') }},
        {{ links.wikipedia('Left 4 Dead') }},
@@ -106,39 +128,48 @@
        {{ links.wikipedia('Command & Conquer: Red Alert') }},
        {{ links.wikipedia('Plants vs. Zombies') }}, and
        {{ links.wikipedia('Grand Theft Auto', 'Grand Theft Auto (series)') }}.
+       My <a href="https://steamdb.info/calculator/76561198011538460/?cc=us" rel="external">Steam library</a>
+       is quite extensive and time consuming.
     </p>
 
     <h2 id="projects">Projects</h2>
     <p>
         I have been an active member of a number of projects over the years, some of which are defunct
-        now and no longer grace the Earth with their presence. I am currently contributing to
+        now and no longer grace the Earth with their presence. I was a
+        {{ links.github_contribs('core contributor', 'phpbb', 'phpbb') }} to
         <a href="http://www.phpbb.com/" rel="external">phpBB</a> as a member of their development team.
-        I was previously involved in my <a href="http://www.exeter.ac.uk/" rel="external">universities</a>
-        student media website – <a href="http://xmedia.ex.ac.uk/" rel="external">X-Media Online</a>.
+        I was previously involved in my universities student media website –
+        <a href="http://xmedia.ex.ac.uk/" rel="external">X-Media Online</a>.
+    </p>
+    <p>
+        After gaining employment my open source contributions are no longer stable but I contribute
+        infrequently to a wider variety of open source projects, including the likes of
+        {{ links.github_contribs('Composer') }},
+        {{ links.github_contribs('Symfony') }}, and
+        {{ links.github_contribs('Kohana', 'kohana', 'core') }}.
     </p>
 
     <h3 id="website">Website</h3>
     <p>
-        I wrote this website myself leveraging the cream of open source technology. This website would
-        not be possible without the following projects and their contributors.
+        This website stands on the shoulders of open source giants (and minnows.)
     </p>
 
     <ul>
-        <li>{{ links.external('http://www.debian.org/', 'Debian') }}</li>
+        <li>{{ links.external('http://www.ubuntu.com/', 'Ubuntu') }}</li>
         <li>{{ links.external('http://nginx.org/en/', 'nginx') }}</li>
-        <li>{{ links.external('http://varnish-cache.org/', 'Varnish') }}</li>
         <li>{{ links.external('http://www.php.net/', 'PHP') }}</li>
-        <li>{{ links.external('http://mysql.com/', 'MySQL') }}</li>
         <li>{{ links.external('http://symfony.com/', 'Symfony') }}</li>
-        <li>{{ links.external('http://framework.zend.com/zf2', 'Zend Framework') }}</li>
+        <li>{{ links.external('http://dokku.viewdocs.io/dokku/', 'Dokku') }}</li>
     </ul>
 
     <h2>Contact</h2>
     <p>
-        If you would like to contact me I’ve obviously not done enough to scare you off or you
-        are a spam bot. You can find my <a href="#contact">details</a> over on the right. One
-        final note; if are working for a <em>recruitment agency</em>, I <em>won’t</em> be best
-        pleased to receive an email from you.
+        I can be emailed using the easily guessable address:
+        <strong>chris@<a href="https://www.google.com/recaptcha/mailhide/d?k=01Yv6HWfU6qDIwt-SfbsmK1Q==&amp;c=yuBbnRiD2_draxhqC7uSAw==" onclick="window.open('https://www.google.com/recaptcha/mailhide/d?k\07501Yv6HWfU6qDIwt-SfbsmK1Q\75\75\46c\75yuBbnRiD2_draxhqC7uSAw\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Oh please! You can probably guess this.">…</a>.org</strong>.
+    </p>
+    <p>
+        Alternatively you may try (and fail) to attract my attention on Twitter:
+        <strong>{{ links.externalme('https://twitter.com/cs278', '@cs278') }}</strong>.
     </p>
 </article>
 {% endblock %}
