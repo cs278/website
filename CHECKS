@@ -1,0 +1,10 @@
+# WAIT before running checks
+WAIT=5
+# Checks must return in less than TIMEOUT
+TIMEOUT=2
+# Try ATTEMPTS before failing
+ATTEMPTS=10
+
+/                          Chris Smith
+/assets/main.css           font-family
+/robots.txt                User-agent
