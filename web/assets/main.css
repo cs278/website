@@ -25,6 +25,33 @@ a:focus {
     font-size: 1.2rem;
 }
 
+.btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-lg {
+    padding: 16px 24px;
+    font-size: 1.5rem;
+}
+
+.btn-primary {
+    background: #ff4b33;
+    border: 1px #ff6b58 solid;
+    color: #fff;
+}
+
+.btn-block {
+    display: block;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background: #E72106;
+    color: #fff;
+}
+
 @media (min-width: 768px) {
     .page-content {
         width: 70%;
