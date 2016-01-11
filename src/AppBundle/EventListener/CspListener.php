@@ -15,7 +15,7 @@ final class CspListener implements EventSubscriberInterface
 
     public function __construct($policy, $enforce = false, $reportUri = null)
     {
-        $this->policy = $policy;
+        $this->policy = is_array($policy) ? implode('; ', $policy) : $policy;
         $this->enforce = (bool) $enforce;
         $this->reportUri = $reportUri;
     }
