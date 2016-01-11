@@ -20,7 +20,7 @@ final class AboutController
     }
 
     /**
-     * @Route("/", name="about")
+     * @Route("/about", name="about")
      */
     public function indexAction(Request $request)
     {
