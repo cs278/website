@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# This script is triggered from composer.json when triggered by the Heroku
+# buildpack. It applies fixups specific to the buildpack deployment.
+
+set -eu
+
+phpini="/tmp/build/.heroku/php/etc/php/php.ini"
+
+rm -f web/app_dev.php web/config.php
+
+if [ -f "$phpini" ]; then
+    sed --in-place 's/expose_php *= *on/expose_php = off/i' "$phpini"
+else
+    echo "Could not find php.ini at \`$phpini\`." >&2
+    exit 1
+fi

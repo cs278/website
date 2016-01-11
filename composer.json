@@ -34,10 +34,7 @@
         "symfony/phpunit-bridge": "^2.7"
     },
     "scripts": {
-        "compile": [
-            "# Executed prior to deploy by the buildpack",
-            "rm -f web/app_dev.php web/config.php"
-        ],
+        "compile": "bin/compile",
         "cs": "php-cs-fixer fix",
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
