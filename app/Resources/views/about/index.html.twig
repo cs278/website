@@ -4,41 +4,6 @@
 
 {% block subtitle %}About{% endblock %}
 
-{#
-{% block sidebar %}
-    <aside id="contact">
-        <h1>Contact</h1>
-        <p>
-        <ul>
-            <li class="email" title="E-Mail">chris@<a href="http://www.google.com/recaptcha/mailhide/d?k=01Yv6HWfU6qDIwt-SfbsmK1Q==&amp;c=yuBbnRiD2_draxhqC7uSAw==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Yv6HWfU6qDIwt-SfbsmK1Q\75\75\46c\75yuBbnRiD2_draxhqC7uSAw\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Oh please! You can probably guess this.">…</a></li>
-            <li class="xmpp" title="Extensible Messaging and Presence Protocol">toonarmy@jabber.org</li>
-            <li class="wlm" title="Windows Live Messenger">im@chris.cs278.org</li>
-            <li class="aim" title="AOL Instant Messenger">cs278dotorg</li>
-            <li class="skype" title="Skype">cs278.</li>
-            <li class="irc" title="IRC">cs278 on <!-- <a href="http://freenode.net/"> -->Freenode<!--</a>--></li>
-        </ul>
-    </aside>
-
-    {{ parent() }}
-{% endblock %}
-#}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-    <script>
-    // <![CDATA[
-    jQuery(function($)
-    {
-        $('[href="#contact"]').click(function()
-        {
-            $('#contact').effect('highlight');
-        });
-    });
-    // ]]>
-    </script>
-{% endblock %}
-
 {% block body %}
 <article>
     <h1>Me</h1>
