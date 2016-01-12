@@ -1,5 +1,5 @@
 # WAIT before running checks
-WAIT=5
+WAIT=10
 # Checks must return in less than TIMEOUT
 TIMEOUT=2
 # Try ATTEMPTS before failing
