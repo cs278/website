@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% import 'links.html.twig' as links %}
+{% import _self as helpers %}
+
+{% macro summary(text) %}
+    {% for paragraph in text|split("\n\n") %}
+        <p>
+            {{ paragraph }}
+        </p>
+    {% endfor %}
+{% endmacro %}
+
+{% macro list(points) %}
+    {% if points|length > 0 %}
+        <ul>
+            {% for point in points %}
+                <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% macro timespan(startDate, endDate) %}
+    {% set endDate = endDate ? endDate : 'present' %}
+    <span class="cv-timespan">
+        <span class="cv-timespan-start">{{ startDate }}</span> – <span class="cv-timespan-end">{{ endDate }}</span>
+    </span>
+{% endmacro %}
+
+{% block subtitle %}About{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/cv.css')}}">
+{% endblock %}
+
+{% block body %}
+<article class="cv h-card">
+    <h1 class="cv-notitle p-name">{{ basics.name }}</h1>
+    <p class="cv-notitle cv-blurb">{{ basics.label }}</p>
+
+    <section class="cv-attributes cv-notitle" id="contact">
+        <a class="u-email cv-personal-email" href="mailto:{{ basics.email }}?subject=CV">{{ basics.email }}</a>
+        {% if basics.phone is defined %}<a class="u-email cv-personal-phone" href="tel:{{ basics.phone }}">{{ basics.phone }}</a>{% endif %}
+        <a class="u-url cv-personal-website" href="{{ basics.website }}">{{ basics.website }}</a>
+        <p class="cv-personal-address">
+            <a href="https://www.google.com/maps?q={{ '%s, %s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
+                {% spaceless %}
+                {% if basics.location.address is defined %}<span class="p-street-address">{{ basics.location.address }}</span>{% endif %}
+                <span class="p-locality">{{ basics.location.city }}</span>
+                <span class="p-region">{{ basics.location.region }}</span>
+                <span class="p-postal-code">{{ basics.location.postalCode }}</span>
+                <span class="p-country-name">{{ basics.location.countryCode }}</span>
+                {% endspaceless %}
+            </a>
+        </p>
+    </section>
+
+    <section class="cv-attributes cv-notitle" id="about">
+        {{ helpers.summary(basics.summary) }}
+    </section>
+
+    {% if work is not empty %}
+    <section class="cv-attributes" id="work">
+        <h2>Work</h2>
+
+        <div>
+            {% for entry in work %}
+                <section>
+                    <h3>{{ entry.company }}</h3>
+                    <span class="cv-describer">{{ entry.position }}</span>
+                    {{ helpers.timespan(entry.startDate, entry.endDate|default) }}
+                    <a class="cv-org-website" href="{{ entry.website }}">{{ entry.website }}</a>
+                    {{ helpers.summary(entry.summary) }}
+                    {% if entry.highlights|default is not empty %}
+                        <h4>Highlights</h4>
+                        {{ helpers.list(entry.highlights) }}
+                    {% endif %}
+                </section>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if volunteer is not empty %}
+    <section class="cv-attributes" id="volunteer">
+        <h2>Volunteer</h2>
+
+        <div>
+            {% for entry in volunteer %}
+                <section>
+                    <h3>{{ entry.organization }}</h3>
+                    <span class="cv-describer">{{ entry.position }}</span>
+                    {{ helpers.timespan(entry.startDate, entry.endDate|default) }}
+                    <a class="cv-org-website" href="{{ entry.website }}">{{ entry.website }}</a>
+                    {{ helpers.summary(entry.summary) }}
+                    {% if entry.highlights|default is not empty %}
+                        <h4>Highlights</h4>
+                        {{ helpers.list(entry.highlights) }}
+                    {% endif %}
+                </section>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if education is not empty %}
+    <section class="cv-attributes" id="education">
+        <h2>Education</h2>
+
+        <div>
+            {% for entry in education %}
+                <section>
+                    <h3>{{ entry.area }}</h3>
+                    <span class="cv-describer">{{ entry.institution }}</span>
+                    {{ helpers.timespan(entry.startDate, entry.endDate|default) }}
+                    {{ helpers.list(entry.courses|default([])) }}
+                </section>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if awards|default is not empty %}
+    <section class="cv-attributes" id="awards">
+        <h2>Awards</h2>
+        <div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if skills is not empty %}
+    <section class="cv-attributes cv-skills" id="skills">
+        <h2>Skills</h2>
+
+        <div>
+        {% for skillset in skills %}
+            <section>
+                <h3>{{ skillset.name }}</h3>
+                <span class="cv-describer">{{ skillset.level }}</span>
+                {{ helpers.list(skillset.keywords) }}
+            </section>
+        {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if languages is not empty %}
+    <section class="cv-attributes" id="languages">
+        <h2>Languages</h2>
+    </section>
+    {% endif %}
+
+    {% if interests is not empty %}
+    <section class="cv-attributes" id="interests">
+        <h2>Interests</h2>
+    </section>
+    {% endif %}
+
+    <section class="cv-attributes" id="references">
+        <h2>References</h2>
+
+        <div>
+            {% if references is empty %}
+                <p>Available upon request.</p>
+            {% endif %}
+        </div>
+    </section>
+</article>
+{% endblock %}

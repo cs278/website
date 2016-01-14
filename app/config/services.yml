@@ -3,3 +3,7 @@ services:
         class: AppBundle\Controller\AboutController
         arguments:
             - '@templating'
+    app.cv_controller:
+        class: AppBundle\Controller\CvController
+        arguments:
+            - '@templating'
