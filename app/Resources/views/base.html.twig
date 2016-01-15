@@ -29,6 +29,10 @@
     <header class="page-content" id="head">
         <h1 class="header-heading">Chris Smith</h1>
         <p class="header-strapline">Metal listener, software developer, gamer, and open source contributor.</p>
+        <ul class="header-shader-nav">
+            {% block header_shader_nav %}
+            {% endblock %}
+        </ul>
     </header>
     <main class="page-content" id="body" role="main">
     {% block body %}{% endblock %}

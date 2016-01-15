@@ -68,8 +68,15 @@ a:focus {
 
     .header-shader #head {
         height: 2rem;
+        min-height: auto;
         background: #409cb1;
         color: #fff;
+        position: fixed;
+        top: 0;
+        width: 70%;
+        left: 15%;
+        margin-left: -50px;
+        z-index: 10;
     }
 
     #body {
@@ -96,13 +103,16 @@ a:focus {
         line-height: 1;
     }
 
-    #foot a {
+    #foot a, .header-shader-nav a {
         color: #fff;
     }
 
     #foot a:hover,
     #foot a:active,
-    #foot a:focus {
+    #foot a:focus,
+    .header-shader-nav a:hover,
+    .header-shader-nav a:active,
+    .header-shader-nav a:focus {
         color: #ff4b33;
     }
 
@@ -122,6 +132,7 @@ a:focus {
         font-weight: 100;
         margin: 0;
         text-align: right;
+        float: right;
     }
 
     .header-strapline {
@@ -133,5 +144,26 @@ a:focus {
 
     .header-shader .header-strapline {
         display: none;
+    }
+
+    .header-shader-nav {
+        display: none;
+        margin: 0 0 0 20%;
+        padding: 0;
+        font-size: 1rem;
+        line-height: 2;
+    }
+
+    .header-shader .header-shader-nav {
+        display: block;
+        float: left;
+    }
+
+    .header-shader .header-shader-nav li {
+        display: inline;
+    }
+
+    .header-shader .header-shader-nav li ~ li {
+        padding-left: 1rem;
     }
 }
