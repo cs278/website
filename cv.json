@@ -1,0 +1,325 @@
+{
+  "basics": {
+    "name": "Chris Smith",
+    "label": "Software Developer",
+    "picture": "",
+    "phone": "+44 7510 283872",
+    "email": "chris@cs278.org",
+    "website": "https://cs278.org/",
+    "summary": "I’m a passionate software developer with a wealth of experience using PHP. I have a strong working knowledge of GNU/Linux systems and software, particularly Debian-based systems.\n\nI have a history of contributing to the open source community and aim to give back wherever I can.\n\nI have a keen eye for detail and strong code review skills, I will contribute to building a quality product.",
+    "location": {
+      "address": "12 Ryland House, Hewell Road",
+      "city": "Redditch",
+      "region": "West Midlands",
+      "postalCode": "B97 6AE",
+      "countryCode": "GB"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "cs278",
+        "url": "https://github.com/cs278"
+      },
+      {
+        "network": "Twitter",
+        "username": "cs278",
+        "url": "https://twitter.com/cs278"
+      },
+      {
+        "network": "Last.fm",
+        "username": "cstoonarmy",
+        "url": "https://last.fm/cstoonarmy"
+      },
+      {
+        "network": "Untappd",
+        "username": "cs278",
+        "url": "https://untappd.com/user/cs278"
+      },
+      {
+        "network": "Steam",
+        "username": "cs278",
+        "url": "https://steamcommunity.com/id/cs278"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Wider Plan",
+      "position": "Software Developer",
+      "website": "https://www.widerplan.com/",
+      "startDate": "2009-11-03",
+      "summary": "",
+      "highlights": [
+        "Helped drive use of Jenkins for continuous integration, deployment and other recurring tasks. Later utilised *Jenkins Job Builder* to roll out common test definitions for multiple repositories.",
+        "Started reusable frontend framework based on *Bootstrap* v3 for product websites.",
+        "Improved response times of web application by offloading intensive tasks to background processing using *Gearman*.",
+        "Drove early adoption of Composer for dependency management of external and internal packages, replacing use of git submodules.",
+        "Standardised adhoc local development environment using *Puppet* based configuration management and customised *Ubuntu* installer."
+      ]
+    },
+    {
+      "company": "Tesco",
+      "position": "Customer Assistant",
+      "website": "http://www.tesco.com/",
+      "startDate": "2007-07-01",
+      "endDate": "2009-05-01",
+      "summary": "Primarily worked on checkouts on a part-time basis during my university studies and holidays.\n\nMy work as a customer assistant has helped improve my people skills; assisting customers with their shopping, solving problems and queries they had."
+    },
+    {
+      "company": "South Gloucestershire Council — Marlwood School",
+      "position": "Student Network Assistant",
+      "website": "http://www.marlwood.com/",
+      "startDate": "2004-10-01",
+      "endDate": "2006-09-01",
+      "summary": "Employed after school term time working in the IT department providing support to users, installing and configuring hardware, troubleshooting hardware problems, and performing various maintenance tasks.\n\nDuring summer holidays I worked equivalent of full time staff, for around a month, performing mass system deployments, networking infrastructure installation and maintenance.\n\nI gained experience relating to networking, user support and mass deployments of Microsoft Windows based computers. In addition I undertook, hardware troubleshooting, configuration and miscellaneous tasks.",
+      "highlights": [
+        "Deployment of 100 new desktop computers plus supporting network infrastructure.",
+        "Assisted in group interview of a new staff Network Assistant."
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "phpBB",
+      "position": "Development Team Member",
+      "website": "https://www.phpbb.com/",
+      "startDate": "2008-07-01",
+      "endDate": "2013-01-01",
+      "summary": "I was invited to join the Development Team of phpBB after a number of years assisting in the community with complex support queries, reporting issues and performing triage of issues.\n\nI assistted with the maintenance of the stable branch, Olympus, and contributed to the early development of the next major release, Ascraeus.",
+      "highlights": [
+        "Provided code to make a best effort to handle servers that disabled the realpath() function.",
+        "Performed initial work of converting phpBB to use PHP’s built-in date timezone handling functionality.",
+        "Wrote test suite for untested custom template engine, later used to prove correctness when engine was replaced by Twig.",
+        "Prepared phpBB for deploment using Microsoft’s web platform installer under guidance of Microsoft staff.",
+        "Wrote automated tooling to validate Git commit messages against guidelines."
+      ]
+    },
+    {
+      "organization": "Students’ Guild — X-Media Online",
+      "position": "Chief Moderator",
+      "website": "http://xmedia.ex.ac.uk/",
+      "startDate": "2008-05-01",
+      "endDate": "2009-05-01",
+      "summary": "I was elected Chief Moderator in this role I moderated discussion on the X-Media Online forums and ensure that all visitors and users adhere to the rules and Students’ Guild policies."
+    },
+    {
+      "organization": "Students’ Guild — X-Media Online",
+      "position": "Developer",
+      "website": "http://xmedia.ex.ac.uk/",
+      "startDate": "2007-12-01",
+      "endDate": "2009-09-01",
+      "summary": "I assisted with further development fo the freshly rewritten X-Media Online website that took on responsibility for hosting content for all other student media organisations (TV/Radio/Newspaper).",
+      "highlights": [
+        "Assisted in development of the new Quicklook bar feature, that displayed a logged in student their number of unread email and details of their next scheduled lectures.",
+        "Contributed to content of the student maintained wiki, X-Pedia.",
+        "Converted the forums to phpBB from SMF.",
+        "Helped perform server maintenance under guidance of the elected Server Manager."
+      ]
+    },
+    {
+      "organization": "Rolls Royce Plc.",
+      "position": "Work Experience",
+      "website": "http://www.rolls-royce.com/",
+      "startDate": "2003-07-01",
+      "endDate": "2003-07-01",
+      "summary": "Worked for one week in the Computer Aided Design department transferring designs into electronic form from paper based designs."
+    },
+    {
+      "organization": "2nd Alveston Scout Troop",
+      "position": "Scout Assistant",
+      "website": "http://www.2ndalvestonscouts.org.uk/",
+      "startDate": "2002-01-01",
+      "endDate": "2003-01-01",
+      "summary": "Once a week I assisted the leader of the Beaver colony (for 6–8 year olds) with the meetings activities. I would set up the required furniture at the beginning of the evening and clear it away afterwards. Further to this I helped with the beavers with the practical activities and games. I also performed instruction on tent pitching with small groups and helped to coordinate treasure hunts and other outdoor activities."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Exeter",
+      "area": "BSc Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2006-10-01",
+      "endDate": "2009-06-30",
+      "courses": [
+        "Compilers and Interpreters",
+        "Further Programming",
+        "Enterprise Computing",
+        "Information Systems",
+        "Formal Notations and Methods",
+        "Compilers & Interpreters",
+        "Web Programming",
+        "Graphics"
+      ]
+    },
+    {
+      "institution": "Marlwood School Sixth Form",
+      "area": "Advanced Studies",
+      "startDate": "2004-09-01",
+      "endDate": "2006-06-01",
+      "courses": [
+        "Mathematics",
+        "Physics",
+        "ICT"
+      ]
+    },
+    {
+      "institution": "Marlwood School",
+      "area": "Secondary Education",
+      "startDate": "1999-09-01",
+      "endDate": "2004-06-01",
+      "courses": [
+        "English Language",
+        "Maths",
+        "Science (Double Award)",
+        "Electronics"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "LAMP Development",
+      "level": "Working",
+      "keywords": [
+        "PHP",
+        "Symfony",
+        "Silex",
+        "Doctrine",
+        "PHPUnit",
+        "HTML",
+        "CSS",
+        "LESS",
+        "JavaScript",
+        "SVG",
+        "SQL",
+        "XML",
+        "XSLT"
+      ]
+    },
+    {
+      "name": "Server Software",
+      "level": "Working",
+      "keywords": [
+        "Apache HTTPD",
+        "nginx",
+        "MySQL",
+        "Jenkins",
+        "Puppet",
+        "NSD",
+        "Bind",
+        "OpenSSH",
+        "Postfix",
+        "Dovecot",
+        "Memcached",
+        "Varnish",
+        "Gearman",
+        "Active Directory",
+        "dpkg packging format"
+      ]
+    },
+    {
+      "name": "Scripting",
+      "level": "Working",
+      "keywords": [
+        "Bourne Shell",
+        "POSIX Shell",
+        "Batch file",
+        "GNU coreutils"
+      ]
+    },
+    {
+      "name": "Programming/Scripting Languages",
+      "level": "Basic",
+      "keywords": [
+        "Java",
+        "Ruby",
+        "Python 2",
+        "VBScript",
+        "PowerShell",
+        "Visual Basic"
+      ]
+    },
+    {
+      "name": "Operating Systems",
+      "level": "Working",
+      "keywords": [
+        "Ubuntu",
+        "Debian",
+        "RHEL",
+        "Windows"
+      ]
+    },
+    {
+      "name": "Version Control",
+      "level": "Working",
+      "keywords": [
+        "Git",
+        "Mercurial",
+        "SVN",
+        "CVS"
+      ]
+    },
+    {
+      "name": "Software Packages",
+      "level": "Working",
+      "keywords": [
+        "phpBB",
+        "WordPress",
+        "Microsoft Office",
+        "LibreOffice",
+        "Google Docs"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "code": "en-gb",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "French",
+      "code": "fr",
+      "fluency": "Elementary"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Outdoors",
+      "keywords": [
+        "Skiing",
+        "Camping",
+        "Cycling",
+        "Hiking",
+        "Geocaching"
+      ]
+    },
+    {
+      "name": "Indoors",
+      "keywords": [
+        "Video Gaming",
+        "Open Source Software",
+        "Reading"
+      ]
+    },
+    {
+      "name": "Everywhere",
+      "keywords": [
+        "Music (Metal/Rock)",
+        "Real Ale",
+        "Photography"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jonathan Fieldsend",
+      "relationship": "Tutor at University of Exeter",
+      "email": "J.E.Fieldsend@exeter.ac.uk"
+    },
+    {
+      "name": "Jacob Richardson",
+      "relationship": "Director at Wider Plan",
+      "email": "jacob.richardson@widerplan.com"
+    }
+  ]
+}
