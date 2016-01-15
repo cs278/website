@@ -133,7 +133,7 @@
 
         <div>
             {% for entry in education %}
-                <section>
+                <section class="cv-attributes-col">
                     <h3>{{ entry.area }}</h3>
                     <span class="cv-describer">{{ entry.institution }}</span>
                     {{ helpers.timespan(entry.startDate, entry.endDate|default) }}

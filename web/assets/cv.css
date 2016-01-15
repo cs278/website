@@ -107,6 +107,16 @@ html {
     position: relative;
 }
 
+.cv-attributes-col {
+    box-sizing: border-box;
+    float: left;
+    width: 33.3%;
+}
+
+.cv-attributes-col ~ .cv-attributes-col {
+    padding-left: 2em;
+}
+
 h2 {
     margin: 0;
     font-size: 2rem;
@@ -119,7 +129,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-section:first-child > h3 {
+section:first-child > h3, .cv-attributes-col > h3 {
     margin-top: 0;
 }
 
