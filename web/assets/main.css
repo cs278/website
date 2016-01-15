@@ -66,8 +66,18 @@ a:focus {
         height: 170px;
     }
 
+    .header-shader #head {
+        height: 2rem;
+        background: #409cb1;
+        color: #fff;
+    }
+
     #body {
         min-height: calc(100vh - 170px - 70px);
+    }
+
+    .header-shader #body {
+        min-height: calc(100vh - 2rem - 70px);
     }
 
     #foot {
@@ -106,10 +116,22 @@ a:focus {
         font-size: 4rem;
     }
 
+    .header-shader .header-heading {
+        font-size: 1.8rem;
+        line-height: 2rem;
+        font-weight: 100;
+        margin: 0;
+        text-align: right;
+    }
+
     .header-strapline {
         margin: 0;
         font-style: italic;
         font-size: 0.95rem;
         font-weight: 300;
+    }
+
+    .header-shader .header-strapline {
+        display: none;
     }
 }

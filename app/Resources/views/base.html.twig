@@ -25,7 +25,7 @@
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <header class="page-content" id="head">
         <h1 class="header-heading">Chris Smith</h1>
         <p class="header-strapline">Metal listener, software developer, gamer, and open source contributor.</p>
