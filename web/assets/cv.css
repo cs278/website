@@ -9,7 +9,6 @@ html {
 .cv h1 {
     font-size: 4rem;
 
-    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -96,6 +95,10 @@ html {
     overflow: hidden;
 }
 
+.cv-attributes > div > :first-child {
+    margin-top: 0;
+}
+
 .cv-notitle {
     margin-left: 20%;
 }
@@ -148,27 +151,75 @@ section:first-child > h3 {
     line-height: 2;
 }*/
 
-.cv-skills section {
+.cv-attributes-list section {
     float: left;
-    /*width: 25%;*/
-    width: 33.3%;
+    width: 25%;
     margin-bottom: 20px;
 }
 
-.cv-skills ul {
+.cv-attributes-list-row {
+    overflow: hidden;
+}
+
+.cv-attributes-list ul {
     padding-left: 0;
     list-style-type: none;
 }
 
-.cv-skills h3 {
+.cv-attributes-list h3 {
     font-size: 1rem;
     margin: 0;
 }
 
-.cv-skills .cv-describer {
+.cv-attributes-list .cv-describer {
     font-size: 0.6rem;
 }
 
-.cv-skills {
+.cv-attributes-list {
     font-size: 0.8rem;
+}
+
+.cv-profile {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+[class^="cv-profile-"] {
+    line-height: 1.6;
+}
+
+[class^="cv-profile-"]::before {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    content: ' ';
+    float: left;
+    opacity: 0.4;
+    margin-right: 0.5rem;
+    line-height: 1;
+}
+
+[class^="cv-profile-"]:hover::before {
+    opacity: 1;
+}
+
+.cv-profile-twitter::before {
+    background-image: url('ionicons/social-twitter.svg');
+}
+
+.cv-profile-github::before {
+    background-image: url('ionicons/social-github.svg');
+}
+
+.cv-profile-lastfm::before {
+    background-image: url('ionicons/music-note.svg');
+}
+
+.cv-profile-untappd::before {
+    background-image: url('ionicons/beer.svg');
+}
+
+.cv-profile-steam::before {
+    background-image: url('ionicons/steam.svg');
 }

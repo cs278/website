@@ -22,13 +22,26 @@
 {% endmacro %}
 
 {% macro timespan(startDate, endDate) %}
-    {% set endDate = endDate ? endDate : 'present' %}
     <span class="cv-timespan">
-        <span class="cv-timespan-start">{{ startDate }}</span> – <span class="cv-timespan-end">{{ endDate }}</span>
+        <span class="cv-timespan-start" title="{{ startDate|date('Y-m-d') }}">
+            {{ startDate|date('F Y') }}
+        </span>
+        –
+        {% if endDate %}
+            <span class="cv-timespan-end" title="{{ endDate|date('Y-m-d') }}">
+                {{ endDate|date('F Y') }}
+            </span>
+        {% else %}
+            <span class="cv-timespan-end">
+                present
+            </span>
+        {% endif %}
     </span>
 {% endmacro %}
 
 {% block subtitle %}About{% endblock %}
+
+{% block body_class %}header-shader{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('assets/cv.css')}}">
@@ -44,15 +57,25 @@
         {% if basics.phone is defined %}<a class="u-email cv-personal-phone" href="tel:{{ basics.phone }}">{{ basics.phone }}</a>{% endif %}
         <a class="u-url cv-personal-website" href="{{ basics.website }}">{{ basics.website }}</a>
         <p class="cv-personal-address">
-            <a href="https://www.google.com/maps?q={{ '%s, %s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
+            {% if basics.location.address is defined and basics.location.postalCode is defined %}
+            <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.address, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
                 {% spaceless %}
-                {% if basics.location.address is defined %}<span class="p-street-address">{{ basics.location.address }}</span>{% endif %}
-                <span class="p-locality">{{ basics.location.city }}</span>
-                <span class="p-region">{{ basics.location.region }}</span>
-                <span class="p-postal-code">{{ basics.location.postalCode }}</span>
-                <span class="p-country-name">{{ basics.location.countryCode }}</span>
+                    <span class="p-street-address">{{ basics.location.address }}</span>
+                    <span class="p-locality">{{ basics.location.city }}</span>
+                    <span class="p-region">{{ basics.location.region }}</span>
+                    <span class="p-postal-code">{{ basics.location.postalCode }}</span>
+                    <span class="p-country-name">{{ basics.location.countryCode }}</span>
                 {% endspaceless %}
             </a>
+            {% else %}
+                <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.countryCode)|url_encode }}">
+                    {% spaceless %}
+                        <span class="p-locality">{{ basics.location.city }}</span>
+                        <span class="p-region">{{ basics.location.region }}</span>
+                        <span class="p-country-name">{{ basics.location.countryCode }}</span>
+                    {% endspaceless %}
+                </a>
+            {% endif %}
         </p>
     </section>
 
@@ -130,16 +153,20 @@
     {% endif %}
 
     {% if skills is not empty %}
-    <section class="cv-attributes cv-skills" id="skills">
+    <section class="cv-attributes cv-attributes-list" id="skills">
         <h2>Skills</h2>
 
         <div>
-        {% for skillset in skills %}
-            <section>
-                <h3>{{ skillset.name }}</h3>
-                <span class="cv-describer">{{ skillset.level }}</span>
-                {{ helpers.list(skillset.keywords) }}
-            </section>
+        {% for row in skills|batch(4) %}
+            <div class="cv-attributes-list-row">
+                {% for skillset in row %}
+                    <section>
+                        <h3>{{ skillset.name }}</h3>
+                        <span class="cv-describer">{{ skillset.level }}</span>
+                        {{ helpers.list(skillset.keywords) }}
+                    </section>
+                {% endfor %}
+            </div>
         {% endfor %}
         </div>
     </section>
@@ -148,12 +175,58 @@
     {% if languages is not empty %}
     <section class="cv-attributes" id="languages">
         <h2>Languages</h2>
+        <ul class="list-none">
+            {% for language in languages %}
+            <li>{{ language.language }} — {{ language.fluency }}</li>
+            {% endfor %}
+        </ul>
     </section>
     {% endif %}
 
     {% if interests is not empty %}
-    <section class="cv-attributes" id="interests">
+    <section class="cv-attributes cv-attributes-list" id="interests">
         <h2>Interests</h2>
+
+        <div>
+        {% for row in interests|batch(4) %}
+            <div class="cv-attributes-list-row">
+                {% for interestset in row %}
+                    <section>
+                        <h3>{{ interestset.name }}</h3>
+                        {{ helpers.list(interestset.keywords|sort) }}
+                    </section>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if profiles is not empty %}
+    <section class="cv-attributes" id="Profiles">
+        <h2>Profiles</h2>
+
+        <div>
+            {% if profiles.github is defined %}
+                <p class="cv-profile"><a class="cv-profile-github" title="GitHub" href="{{ profiles.github.url }}">@{{ profiles.github.username }}</a></p>
+            {% endif %}
+
+            {% if profiles.twitter is defined %}
+                <p class="cv-profile"><a class="cv-profile-twitter" title="Twitter" href="{{ profiles.twitter.url }}">@{{ profiles.twitter.username }}</a></p>
+            {% endif %}
+
+            {% if profiles.lastfm is defined %}
+                <p class="cv-profile"><a class="cv-profile-lastfm" title="Last.fm" href="{{ profiles.lastfm.url }}">{{ profiles.lastfm.username }}</a></p>
+            {% endif %}
+
+            {% if profiles.untappd is defined %}
+                <p class="cv-profile"><a class="cv-profile-untappd" title="Untappd" href="{{ profiles.untappd.url }}">{{ profiles.untappd.username }}</a></p>
+            {% endif %}
+
+            {% if profiles.steam is defined %}
+                <p class="cv-profile"><a class="cv-profile-steam" title="Steam" href="{{ profiles.steam.url }}">{{ profiles.steam.username }}</a></p>
+            {% endif %}
+        </div>
     </section>
     {% endif %}
 
