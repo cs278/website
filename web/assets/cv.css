@@ -1,9 +1,9 @@
-html {
-    /*font-size: 14px;*/
-}
-
 #contact {
     overflow: visible;
+}
+
+#about {
+    line-height: 1.5;
 }
 
 .cv h1 {

@@ -28,6 +28,10 @@ final class CvController
     {
         $cv = json_decode(file_get_contents($this->jsonFile), true);
 
+        if (json_last_error()) {
+            throw new \LogicException(json_last_error_msg());
+        }
+
         // Convert dates into DateTime objects.
         array_walk_recursive($cv, function (&$value, $key) {
             if ($key === 'startDate' || $key === 'endDate') {
@@ -57,7 +61,19 @@ final class CvController
             ];
         }
 
-        $cv['profiles'] = $profiles;
+        // Set defaults
+        $cv += [
+            'work' => [],
+            'volunteer' => [],
+            'education' => [],
+            'awards' => [],
+            'skills' => [],
+            'languages' => [],
+            'interests' => [],
+            'profiles' => [],
+            'references' => [],
+            'profiles' => $profiles,
+        ];
 
         return new Response(
             $this->templating->render('about/cv.html.twig', $cv),

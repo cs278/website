@@ -7,3 +7,9 @@ services:
         class: AppBundle\Controller\CvController
         arguments:
             - '@templating'
+
+    app.inline_markdown_extension:
+        class: AppBundle\Twig\InlineMarkdownExtension
+        public: false
+        tags:
+            - { name: twig.extension }
