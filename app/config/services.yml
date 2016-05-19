@@ -13,3 +13,15 @@ services:
         public: false
         tags:
             - { name: twig.extension }
+
+    # app.commonmark_twig_extension:
+    #     class: Aptoma\Twig\Extension\MarkdownExtension
+    #     arguments:
+    #         - '@app.commonmark_adapter'
+    #     public: false
+    #     tags:
+    #         - { name: twig.extension }
+    #
+    # app.commonmark_adapter:
+    #     class: Aptoma\Twig\Extension\MarkdownEngine\PHPLeagueCommonMarkEngine
+    #     public: false
