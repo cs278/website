@@ -21,8 +21,14 @@
     "require": {
         "php": "^7.4.0",
         "ext-ctype": "*",
+        "ext-dom": "*",
+        "ext-iconv": "*",
         "ext-intl": "*",
+        "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-session": "*",
+        "ext-tokenizer": "*",
+        "ext-xml": "*",
         "symfony/symfony": "5.2.*",
         "symfony/monolog-bundle": "^3",
         "justinrainbow/json-schema": "^1.6"
