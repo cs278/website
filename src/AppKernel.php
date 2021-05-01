@@ -16,7 +16,6 @@ final class AppKernel extends Kernel
         yield new Symfony\Bundle\SecurityBundle\SecurityBundle();
         yield new Symfony\Bundle\TwigBundle\TwigBundle();
         yield new Symfony\Bundle\MonologBundle\MonologBundle();
-        yield new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle();
         yield new AppBundle\AppBundle();
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -22,7 +22,6 @@
         "php": "^7.4.0",
         "symfony/symfony": "5.2.*",
         "symfony/monolog-bundle": "^3",
-        "sensio/framework-extra-bundle": "^6",
         "justinrainbow/json-schema": "^1.6"
     },
     "require-dev": {
