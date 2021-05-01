@@ -4,7 +4,7 @@ namespace AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 final class CspListener implements EventSubscriberInterface
@@ -20,7 +20,7 @@ final class CspListener implements EventSubscriberInterface
         $this->reportUri = $reportUri;
     }
 
-    public function onKernelResponse(FilterResponseEvent $e)
+    public function onKernelResponse(ResponseEvent $e)
     {
         if (!$e->isMasterRequest()) {
             return;

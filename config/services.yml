@@ -1,15 +1,10 @@
 services:
-    app.about_controller:
-        class: AppBundle\Controller\AboutController
-        arguments:
-            - '@templating'
-    app.cv_controller:
-        class: AppBundle\Controller\CvController
-        arguments:
-            - '@templating'
+    AppBundle\Controller\:
+        resource: '../src/AppBundle/Controller/*'
+        public: true
+        autowire: true
+        autoconfigure: true
 
-    app.inline_markdown_extension:
-        class: AppBundle\Twig\InlineMarkdownExtension
+    AppBundle\Twig\InlineMarkdownExtension:
         public: false
-        tags:
-            - { name: twig.extension }
+        autoconfigure: true

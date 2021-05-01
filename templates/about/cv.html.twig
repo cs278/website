@@ -100,21 +100,21 @@
         <p class="cv-personal-address">
             {% if basics.location.address is defined and basics.location.postalCode is defined %}
             <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.address, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
-                {% spaceless %}
+                {% apply spaceless %}
                     <span class="p-street-address">{{ basics.location.address }}</span>
                     <span class="p-locality">{{ basics.location.city }}</span>
                     <span class="p-region">{{ basics.location.region }}</span>
                     <span class="p-postal-code">{{ basics.location.postalCode }}</span>
                     <span class="p-country-name">{{ basics.location.countryCode }}</span>
-                {% endspaceless %}
+                {% endapply %}
             </a>
             {% else %}
                 <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.countryCode)|url_encode }}">
-                    {% spaceless %}
+                    {% apply spaceless %}
                         <span class="p-locality">{{ basics.location.city }}</span>
                         <span class="p-region">{{ basics.location.region }}</span>
                         <span class="p-country-name">{{ basics.location.countryCode }}</span>
-                    {% endspaceless %}
+                    {% endapply %}
                 </a>
             {% endif %}
         </p>

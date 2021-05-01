@@ -2,22 +2,19 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Templating\EngineInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment as Twig;
 
-/**
- * @Route(service="app.cv_controller")
- */
 final class CvController
 {
-    private $templating;
+    private Twig $twig;
     private $jsonFile;
 
-    public function __construct(EngineInterface $templating)
+    public function __construct(Twig $twig)
     {
-        $this->templating = $templating;
+        $this->twig = $twig;
         $this->jsonFile = __DIR__.'/../../../cv.json';
     }
 
@@ -26,11 +23,7 @@ final class CvController
      */
     public function indexAction(Request $request)
     {
-        $cv = json_decode(file_get_contents($this->jsonFile), true);
-
-        if (json_last_error()) {
-            throw new \LogicException(json_last_error_msg());
-        }
+        $cv = json_decode(file_get_contents($this->jsonFile), true, 512, \JSON_THROW_ON_ERROR);
 
         // Convert dates into DateTime objects.
         array_walk_recursive($cv, function (&$value, $key) {
@@ -76,7 +69,7 @@ final class CvController
         ];
 
         return new Response(
-            $this->templating->render('about/cv.html.twig', $cv),
+            $this->twig->render('about/cv.html.twig', $cv),
             Response::HTTP_OK
         );
     }
