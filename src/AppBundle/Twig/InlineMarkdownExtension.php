@@ -2,17 +2,15 @@
 
 namespace AppBundle\Twig;
 
-final class InlineMarkdownExtension extends \Twig_Extension
-{
-    public function getName()
-    {
-        return 'inline_markdown';
-    }
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
+final class InlineMarkdownExtension extends AbstractExtension
+{
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('inline_markdown', function ($input) {
+            new TwigFilter('inline_markdown', function ($input) {
                 // Emphasis
                 $input = preg_replace_callback('{(\*{1,3})([^\*]+?)\1}', function ($m) {
                     $formats = [
