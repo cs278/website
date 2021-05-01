@@ -14,6 +14,7 @@ RUN : \
 COPY bin /srv/bin
 COPY config /srv/config
 COPY vendor /srv/vendor
+COPY node_modules /srv/node_modules
 
 COPY cv.json /srv/
 COPY supervisord.conf /etc/supervisord.conf

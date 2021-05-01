@@ -1,5 +1,6 @@
 {
     "dependencies": {
-        "bower": "~1.7"
+        "ionicons": "~5.5.1",
+        "normalize.css": "~8.0.1"
     }
 }
