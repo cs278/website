@@ -4,7 +4,7 @@ RUN : \
     && sed --in-place 's/v3\.12/v3.13/g' /etc/apk/repositories \
     && apk update \
     && apk upgrade \
-    && apk add php7-fpm php7-dom php7-json php7-session php7-tokenizer composer supervisor \
+    && apk add php7-fpm php7-dom php7-intl php7-json php7-session php7-tokenizer composer supervisor \
     && rm /var/cache/apk/*
 
 RUN : \
