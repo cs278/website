@@ -12,6 +12,7 @@ framework:
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%env(APP_SECRET)%"
     router:
+        utf8: true
         strict_requirements: ~
     form:            ~
     csrf_protection: ~

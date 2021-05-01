@@ -4,7 +4,7 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\RouteCollectionBuilder;
+use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 final class AppKernel extends Kernel
 {
@@ -46,7 +46,7 @@ final class AppKernel extends Kernel
         $loader->load($this->getProjectDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
 
-    protected function configureRoutes(RouteCollectionBuilder $routes): void
+    protected function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->import($this->getProjectDir().'/config/routing.yml');
 
