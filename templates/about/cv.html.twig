@@ -97,9 +97,8 @@
         <a class="u-email cv-personal-email" href="mailto:{{ basics.email }}?subject=CV">{{ basics.email }}</a>
         {% if basics.phone is defined %}<a class="u-email cv-personal-phone" href="tel:{{ basics.phone }}">{{ basics.phone }}</a>{% endif %}
         <a class="u-url cv-personal-website" href="{{ basics.website }}">{{ basics.website }}</a>
-        <p class="cv-personal-address">
-            {% if basics.location.address is defined and basics.location.postalCode is defined %}
-            <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.address, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
+        {% if basics.location.address is defined and basics.location.postalCode is defined %}
+            <a class="cv-personal-address" href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.address, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
                 {% apply spaceless %}
                     <span class="p-street-address">{{ basics.location.address }}</span>
                     <span class="p-locality">{{ basics.location.city }}</span>
@@ -108,16 +107,15 @@
                     <span class="p-country-name">{{ basics.location.countryCode }}</span>
                 {% endapply %}
             </a>
-            {% else %}
-                <a href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.countryCode)|url_encode }}">
-                    {% apply spaceless %}
-                        <span class="p-locality">{{ basics.location.city }}</span>
-                        <span class="p-region">{{ basics.location.region }}</span>
-                        <span class="p-country-name">{{ basics.location.countryCode }}</span>
-                    {% endapply %}
-                </a>
-            {% endif %}
-        </p>
+        {% else %}
+            <a class="cv-personal-address" href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.city, basics.location.region, basics.location.countryCode)|url_encode }}">
+                {% apply spaceless %}
+                    <span class="p-locality">{{ basics.location.city }}</span>
+                    <span class="p-region">{{ basics.location.region }}</span>
+                    <span class="p-country-name">{{ basics.location.countryCode }}</span>
+                {% endapply %}
+            </a>
+        {% endif %}
     </section>
 
     <section class="cv-attributes cv-notitle" id="about">
