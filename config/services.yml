@@ -1,10 +1,10 @@
 services:
-    AppBundle\Controller\:
-        resource: '../src/AppBundle/Controller/*'
+    App\Controller\:
+        resource: '../src/Controller/*'
         public: true
         autowire: true
         autoconfigure: true
 
-    AppBundle\Twig\InlineMarkdownExtension:
+    App\Twig\InlineMarkdownExtension:
         public: false
         autoconfigure: true

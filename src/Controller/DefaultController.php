@@ -1,13 +1,13 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment as Twig;
 
-final class AboutController
+final class DefaultController
 {
     private Twig $twig;
 
@@ -17,13 +17,10 @@ final class AboutController
     }
 
     /**
-     * @Route("/about", name="about")
+     * @Route("/", name="home")
      */
     public function indexAction(Request $request)
     {
-        return new Response(
-            $this->twig->render('about/index.html.twig'),
-            Response::HTTP_OK
-        );
+        return new Response($this->twig->render('default/index.html.twig'));
     }
 }

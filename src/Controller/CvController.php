@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ final class CvController
     public function __construct(Twig $twig)
     {
         $this->twig = $twig;
-        $this->jsonFile = __DIR__.'/../../../cv.json';
+        $this->jsonFile = __DIR__.'/../../cv.json';
     }
 
     /**

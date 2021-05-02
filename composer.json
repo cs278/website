@@ -11,12 +11,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "": "src/"
-        },
-        "classmap": [
-            "src/AppKernel.php",
-            "src/AppCache.php"
-        ]
+            "App\\": "src/"
+        }
     },
     "require": {
         "php": "^7.4.0",

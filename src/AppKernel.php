@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,15 +14,14 @@ final class AppKernel extends Kernel
 
     public function registerBundles(): iterable
     {
-        yield new Symfony\Bundle\FrameworkBundle\FrameworkBundle();
-        yield new Symfony\Bundle\SecurityBundle\SecurityBundle();
-        yield new Symfony\Bundle\TwigBundle\TwigBundle();
-        yield new Symfony\Bundle\MonologBundle\MonologBundle();
-        yield new AppBundle\AppBundle();
+        yield new \Symfony\Bundle\FrameworkBundle\FrameworkBundle();
+        yield new \Symfony\Bundle\SecurityBundle\SecurityBundle();
+        yield new \Symfony\Bundle\TwigBundle\TwigBundle();
+        yield new \Symfony\Bundle\MonologBundle\MonologBundle();
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
-            yield new Symfony\Bundle\DebugBundle\DebugBundle();
-            yield new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+            yield new \Symfony\Bundle\DebugBundle\DebugBundle();
+            yield new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
         }
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\AppKernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
