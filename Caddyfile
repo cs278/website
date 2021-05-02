@@ -9,4 +9,6 @@
         root /web
     }
     file_server
+
+    header Server "The Caddy"
 }
