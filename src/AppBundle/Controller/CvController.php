@@ -23,7 +23,18 @@ final class CvController
      */
     public function indexAction(Request $request)
     {
+        $response = new Response();
+        $response->setLastModified(new \DateTimeImmutable('@'.\filemtime($this->jsonFile)));
+        $response->setEtag(\hash_file('sha1', $this->jsonFile));
+        $response->setPublic();
+        $response->setMaxAge(3600);
+        $response->setSharedMaxAge(7200);
+
         $cv = json_decode(file_get_contents($this->jsonFile), true, 512, \JSON_THROW_ON_ERROR);
+
+        if ($response->isNotModified($request)) {
+            return $response;
+        }
 
         // Convert dates into DateTime objects.
         array_walk_recursive($cv, function (&$value, $key) {
@@ -68,9 +79,8 @@ final class CvController
             'profiles' => $profiles,
         ];
 
-        return new Response(
-            $this->twig->render('about/cv.html.twig', $cv),
-            Response::HTTP_OK
-        );
+        $response->setContent($this->twig->render('about/cv.html.twig', $cv));
+
+        return $response;
     }
 }
