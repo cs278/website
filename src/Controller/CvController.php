@@ -54,7 +54,7 @@ final class CvController
 
         $profiles = [];
 
-        foreach ($cv['basics']['profiles'] as $profile) {
+        foreach ($cv['basics']['profiles'] ?? [] as $profile) {
             $network = mb_strtolower($profile['network']);
             // Remove non letters/numbers Unicode aware of course.
             $network = preg_replace('{[^\p{L}\p{N}]}', '', $network);

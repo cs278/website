@@ -96,7 +96,7 @@
     <section class="cv-attributes cv-notitle" id="contact">
         <a class="u-email cv-personal-email" href="mailto:{{ basics.email }}?subject=CV">{{ basics.email }}</a>
         {% if basics.phone is defined %}<a class="u-email cv-personal-phone" href="tel:{{ basics.phone }}">{{ basics.phone }}</a>{% endif %}
-        <a class="u-url cv-personal-website" href="{{ basics.website }}">{{ basics.website }}</a>
+        <a class="u-url cv-personal-website" href="{{ basics.url }}">{{ basics.url }}</a>
         {% if basics.location.address is defined and basics.location.postalCode is defined %}
             <a class="cv-personal-address" href="https://www.google.com/maps?q={{ '%s, %s, %s'|format(basics.location.address, basics.location.postalCode, basics.location.countryCode)|url_encode }}">
                 {% apply spaceless %}
