@@ -1,17 +1,18 @@
-FROM caddy:2-alpine
+FROM alpine:3.13
 
 RUN : \
-    && sed --in-place 's/v3\.12/v3.13/g' /etc/apk/repositories \
     && apk update \
-    && apk upgrade \
     && apk add \
         php8-fpm php8-ctype php8-dom php8-iconv php8-intl php8-mbstring php8-opcache php8-session php8-tokenizer php8-xml \
+        caddy \
         supervisor \
     && apk add --virtual .build \
         php8-cli php8-curl php8-openssl php8-phar \
         composer \
         nodejs npm \
     && rm /var/cache/apk/*
+
+WORKDIR /srv
 
 RUN : \
     && mkdir -p /srv/var/cache /srv/var/logs /srv/var/sessions /srv/tmp \
