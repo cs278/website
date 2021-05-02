@@ -5,7 +5,7 @@ RUN : \
     && apk update \
     && apk upgrade \
     && apk add \
-        php8-fpm php8-ctype php8-dom php8-iconv php8-intl php8-mbstring php8-session php8-tokenizer php8-xml \
+        php8-fpm php8-ctype php8-dom php8-iconv php8-intl php8-mbstring php8-opcache php8-session php8-tokenizer php8-xml \
         supervisor \
     && apk add --virtual .build \
         php8-cli php8-curl php8-openssl php8-phar \
