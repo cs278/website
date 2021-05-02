@@ -15,7 +15,7 @@ final class CvController
     public function __construct(Twig $twig)
     {
         $this->twig = $twig;
-        $this->jsonFile = __DIR__.'/../../cv.json';
+        $this->jsonFile = __DIR__.'/../../resources/cv.json';
     }
 
     /**

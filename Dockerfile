@@ -32,7 +32,7 @@ COPY php-fpm.conf /etc/php-fpm.conf
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY .user.ini /srv/
 
-COPY cv.json /srv/
+COPY resources/cv.json /srv/resources/
 COPY src /srv/src
 COPY web /srv/web
 COPY templates /srv/templates
