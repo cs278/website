@@ -44,12 +44,17 @@ $kernel->boot();
         // Unfortunately trusting all IP's is the only way.
         Request::setTrustedProxies(
             ['0.0.0.0/0'],
-            Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO,
+            Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO | Request::HEADER_X_FORWARDED_HOST,
         );
     }
 })(
     $readenv('APP_CLOUDFRONT_SECRET', ''),
 );
+
+Request::setTrustedHosts([
+    '^cs278-website-prod\.fly\.dev$',
+    '^(www\.)?cs278\.org$',
+]);
 
 unset($readenv, $env, $debug);
 
