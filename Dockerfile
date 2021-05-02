@@ -39,6 +39,7 @@ COPY Caddyfile /etc/caddy/Caddyfile
 
 COPY web /srv/web
 COPY templates /srv/templates
+COPY .user.ini /srv/web
 
 HEALTHCHECK \
   --interval=10s \
