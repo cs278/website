@@ -23,6 +23,9 @@ if ($debug) {
     Debug::enable();
 }
 
+$kernel = new AppKernel($env, $debug);
+$kernel->boot();
+
 // Configure Symfony to trust header from CloudFront if request came from
 // CloudFront, which is verified using a header added with a secret string.
 (function (string $expected): void {
@@ -38,13 +41,16 @@ if ($debug) {
     }
 
     if (hash_equals($expected, $headerValue)) {
-        Request::setTrustedProxies(['REMOTE_ADDR'], Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO);
+        // Unfortunately trusting all IP's is the only way.
+        Request::setTrustedProxies(
+            ['0.0.0.0/0'],
+            Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO,
+        );
     }
 })(
     $readenv('APP_CLOUDFRONT_SECRET', ''),
 );
 
-$kernel = new AppKernel($env, $debug);
 unset($readenv, $env, $debug);
 
 $request = Request::createFromGlobals();
