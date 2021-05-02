@@ -13,7 +13,7 @@ final class IpController
      */
     public function indexAction(Request $request)
     {
-        return new Response($request->getClientIp(), 200, [
+        return new Response($request->getClientIp()."\n", 200, [
             'Content-Type' => 'text/plain',
             'Cache-Control' => 'private, no-store',
         ]);
