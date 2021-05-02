@@ -32,7 +32,6 @@ COPY config /srv/config
 COPY supervisord.conf /etc/supervisord.conf
 COPY php-fpm.conf /etc/php-fpm.conf
 COPY Caddyfile /etc/caddy/Caddyfile
-COPY .user.ini /srv/
 
 COPY resources/cv.json /srv/resources/
 COPY src /srv/src
