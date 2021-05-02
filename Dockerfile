@@ -38,6 +38,8 @@ COPY src /srv/src
 COPY web /srv/web
 COPY templates /srv/templates
 
+RUN echo "expose_php=off" > /etc/php8/conf.d/expose.ini
+
 # @todo Need to do this...
 #RUN composer dump-autoload --classmap-authoritative --no-interaction
 
