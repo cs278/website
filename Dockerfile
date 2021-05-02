@@ -5,22 +5,23 @@ RUN : \
     && apk update \
     && apk upgrade \
     && apk add \
-        php7-fpm php-ctype php7-dom php7-iconv php7-intl php7-json php7-mbstring php7-session php7-tokenizer php7-xml \
+        php8-fpm php8-ctype php8-dom php8-iconv php8-intl php8-mbstring php8-session php8-tokenizer php8-xml \
         supervisor \
     && apk add --virtual .build \
+        php8-cli php8-curl php8-openssl php8-phar \
         composer \
         nodejs npm \
     && rm /var/cache/apk/*
 
 RUN : \
-    && mkdir -p /srv/var/cache /srv/var/logs /srv/var/sessions \
-    && chown nobody: /srv/var/cache /srv/var/logs /srv/var/sessions
+    && mkdir -p /srv/var/cache /srv/var/logs /srv/var/sessions /srv/tmp \
+    && chown nobody: /srv/var/cache /srv/var/logs /srv/var/sessions /srv/tmp
 
 COPY package*.json /srv/
 RUN npm i --production
 
 COPY composer.* /srv/
-RUN composer install --prefer-dist --no-cache --no-interaction --no-dev
+RUN php8 $(which composer) install --prefer-dist --no-cache --no-interaction --no-dev
 
 RUN apk del --no-cache .build
 
