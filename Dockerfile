@@ -16,30 +16,29 @@ RUN : \
     && mkdir -p /srv/var/cache /srv/var/logs /srv/var/sessions \
     && chown nobody: /srv/var/cache /srv/var/logs /srv/var/sessions
 
-COPY bin /srv/bin
-COPY config /srv/config
-# COPY vendor /srv/vendor
-# COPY node_modules /srv/node_modules
-
 COPY package*.json /srv/
 RUN npm i --production
 
-# @todo Move this down when autoloading is only using PSR-4
-COPY src /srv/src
-
 COPY composer.* /srv/
-RUN composer install --prefer-dist --classmap-authoritative --no-cache --no-interaction --no-dev
+RUN composer install --prefer-dist --no-cache --no-interaction --no-dev
 
 RUN apk del --no-cache .build
 
-COPY cv.json /srv/
+COPY bin /srv/bin
+COPY config /srv/config
+
 COPY supervisord.conf /etc/supervisord.conf
 COPY php-fpm.conf /etc/php-fpm.conf
 COPY Caddyfile /etc/caddy/Caddyfile
+COPY .user.ini /srv/
 
+COPY cv.json /srv/
+COPY src /srv/src
 COPY web /srv/web
 COPY templates /srv/templates
-COPY .user.ini /srv/web
+
+# @todo Need to do this...
+#RUN composer dump-autoload --classmap-authoritative --no-interaction
 
 HEALTHCHECK \
   --interval=10s \
