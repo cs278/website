@@ -18,6 +18,7 @@ final class AppKernel extends Kernel
         yield new \Symfony\Bundle\SecurityBundle\SecurityBundle();
         yield new \Symfony\Bundle\TwigBundle\TwigBundle();
         yield new \Symfony\Bundle\MonologBundle\MonologBundle();
+        yield new \Symfony\WebpackEncoreBundle\WebpackEncoreBundle();
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             yield new \Symfony\Bundle\DebugBundle\DebugBundle();

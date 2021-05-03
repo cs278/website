@@ -19,12 +19,21 @@ RUN : \
     && chown nobody: /srv/var/cache /srv/var/logs /srv/var/sessions /srv/tmp
 
 COPY package*.json /srv/
-RUN npm i --production
+RUN npm i
 
 COPY composer.* /srv/
 RUN php8 $(which composer) install --prefer-dist --no-cache --no-interaction --no-dev
 
-RUN apk del --no-cache .build
+COPY assets /srv/assets
+COPY web /srv/web
+COPY webpack.config.js /srv/
+
+RUN : \
+    && npm run build \
+    && rm -rf assets \
+    && rm -rf node_modules \
+    && rm webpack.config.js \
+    && apk del --no-cache .build
 
 COPY bin /srv/bin
 COPY config /srv/config
@@ -35,7 +44,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY resources/cv.json /srv/resources/
 COPY src /srv/src
-COPY web /srv/web
 COPY templates /srv/templates
 
 RUN ( \

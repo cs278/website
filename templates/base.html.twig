@@ -17,14 +17,10 @@
 
     <link rel="icon" href="{{ asset('assets/glider.svg') }}">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,400italic,700">
-    <link rel="stylesheet" href="{{ asset('assets/normalize.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/helpers.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/main.css')}}">
 
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/main.css')}}">
     {% endblock %}
-
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body class="{% block body_class %}{% endblock %}">
     <header class="page-content" id="head">

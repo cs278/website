@@ -16,7 +16,11 @@ framework:
         handler_id:  ~
         save_path:   "%kernel.project_dir%/var/sessions/%kernel.environment%"
     http_method_override: true
-    assets: ~
+    assets:
+        json_manifest_path: '%kernel.project_dir%/web/assets/manifest.json'
+
+webpack_encore:
+    output_path: '%kernel.project_dir%/web/assets'
 
 # Twig Configuration
 twig:
