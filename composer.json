@@ -30,7 +30,7 @@
         "justinrainbow/json-schema": "^1.6"
     },
     "require-dev": {
-        "cs278/coding-standard": "^2@dev"
+        "cs278/coding-standard": "^2"
     },
     "provide": {
         "symfony/polyfill-ctype": "*",

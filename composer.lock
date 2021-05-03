@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d2a3855926e098bac4d7f1314504949",
+    "content-hash": "0c7ee31d4be3df397775db144a834bc3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1902,23 +1902,22 @@
         },
         {
             "name": "cs278/coding-standard",
-            "version": "dev-master",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cs278/coding-standard-php.git",
-                "reference": "7016c964cbefecd6ea529a3ce01490e18ddb5d5b"
+                "reference": "9d38d2aacf2b318aa54800f2d833fabbf5ac1f40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cs278/coding-standard-php/zipball/7016c964cbefecd6ea529a3ce01490e18ddb5d5b",
-                "reference": "7016c964cbefecd6ea529a3ce01490e18ddb5d5b",
+                "url": "https://api.github.com/repos/cs278/coding-standard-php/zipball/9d38d2aacf2b318aa54800f2d833fabbf5ac1f40",
+                "reference": "9d38d2aacf2b318aa54800f2d833fabbf5ac1f40",
                 "shasum": ""
             },
             "require": {
                 "friendsofphp/php-cs-fixer": "^2.13.1",
-                "php": "^7.1"
+                "php": "^7.1 || ^8"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1943,9 +1942,9 @@
             "description": "My own personal coding standard.",
             "support": {
                 "issues": "https://github.com/cs278/coding-standard-php/issues",
-                "source": "https://github.com/cs278/coding-standard-php/tree/master"
+                "source": "https://github.com/cs278/coding-standard-php/tree/v2.0.1"
             },
-            "time": "2018-11-08T22:42:12+00:00"
+            "time": "2021-05-03T21:08:22+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -2109,9 +2108,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cs278/coding-standard": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
