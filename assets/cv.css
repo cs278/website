@@ -1,0 +1,237 @@
+#contact {
+    overflow: visible;
+}
+
+#about {
+    line-height: 1.5;
+}
+
+.cv h1 {
+    font-size: 4rem;
+
+    margin-bottom: 0;
+}
+
+.cv-blurb {
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.cv-personal-email,
+.cv-personal-phone,
+.cv-personal-website,
+.cv-personal-address {
+    display: block;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cv-personal-email::before,
+.cv-personal-phone::before,
+.cv-personal-website::before,
+.cv-personal-address::before {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    content: ' ';
+    margin-left: -2.5rem;
+    float: left;
+    opacity: 0.4;
+}
+
+.cv-personal-email:hover::before,
+.cv-personal-phone:hover::before,
+.cv-personal-website:hover::before,
+.cv-personal-address:hover::before {
+    opacity: 1;
+}
+
+.cv-personal-phone::before {
+    background-image: url('ionicons/call.svg');
+}
+
+.cv-personal-website::before {
+    background-image: url('ionicons/link.svg');
+}
+
+.cv-personal-email::before {
+    background-image: url('ionicons/mail.svg');
+}
+
+.cv-personal-address::before {
+    background-image: url('ionicons/map.svg');
+}
+
+.cv-personal-address span:nth-of-type(n+2)::before  {
+    content: ', ';
+}
+
+.cv-attributes {
+    overflow: hidden;
+    /* Jump up and back down 2rem to account for fixed header. */
+    margin: -2rem 0 40px 0;
+    padding-top: 2rem;
+}
+
+.cv-attributes ~ .cv-attributes {
+    margin-top: 0;
+}
+
+.cv-attributes > h2,
+.cv-attributes > div {
+    float: left;
+}
+
+.cv-attributes > h2 {
+    width: 20%;
+}
+
+.cv-attributes > div {
+    width: 80%;
+    overflow: hidden;
+}
+
+.cv-attributes > div > :first-child {
+    margin-top: 0;
+}
+
+.cv-notitle {
+    margin-left: 20%;
+}
+
+.cv-attributes > div > section {
+    position: relative;
+}
+
+.cv-attributes-col {
+    box-sizing: border-box;
+    float: left;
+    width: 33.3%;
+}
+
+.cv-attributes-col ~ .cv-attributes-col {
+    padding-left: 2em;
+}
+
+h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+section:first-child > h3, .cv-attributes-col > h3 {
+    margin-top: 0;
+}
+
+.cv-describer {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.cv-timespan {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.cv-org-website {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 2;
+}
+
+/*.cv-timespan {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 2;
+}*/
+
+.cv-attributes-list section {
+    float: left;
+    width: 25%;
+    margin-bottom: 20px;
+}
+
+.cv-attributes-list-row {
+    overflow: hidden;
+}
+
+.cv-attributes-list ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.cv-attributes-list h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.cv-attributes-list .cv-describer {
+    font-size: 0.6rem;
+}
+
+.cv-attributes-list {
+    font-size: 0.8rem;
+}
+
+.cv-profile {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+[class^="cv-profile-"] {
+    line-height: 1.6;
+}
+
+[class^="cv-profile-"]::before {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    content: ' ';
+    float: left;
+    opacity: 0.4;
+    margin-right: 0.5rem;
+    line-height: 1;
+}
+
+[class^="cv-profile-"]:hover::before {
+    opacity: 1;
+}
+
+.cv-profile-twitter::before {
+    background-image: url('ionicons/logo-twitter.svg');
+}
+
+.cv-profile-github::before {
+    background-image: url('ionicons/logo-github.svg');
+}
+
+.cv-profile-lastfm::before {
+    background-image: url('ionicons/musical-note.svg');
+}
+
+.cv-profile-untappd::before {
+    background-image: url('ionicons/beer.svg');
+}
+
+.cv-profile-steam::before {
+    background-image: url('ionicons/logo-steam.svg');
+}

@@ -1,5 +1,18 @@
 {
     "dependencies": {
-        "bower": "~1.7"
-    }
+        "ionicons": "~5.5.1",
+        "normalize.css": "~8.0.1"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^1.2.0",
+        "file-loader": "^6.2.0"
+    },
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production"
+    },
+    "license": "UNLICENSED",
+    "private": true
 }

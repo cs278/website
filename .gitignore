@@ -3,5 +3,6 @@
 /node_modules
 /phpunit.xml
 /vendor
+/web/assets
 /web/bundles
 /web/config.php

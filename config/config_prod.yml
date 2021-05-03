@@ -1,0 +1,37 @@
+imports:
+    - { resource: config.yml }
+
+#framework:
+#    validation:
+#        cache: validator.mapping.cache.apc
+#    serializer:
+#        cache: serializer.mapping.cache.apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        console:
+            type:  console
+
+services:
+    App\EventListener\CspListener:
+        autoconfigure: true
+        arguments:
+            -
+                - "default-src 'self'"
+                - "style-src 'self' fonts.googleapis.com"
+                - "font-src 'self' fonts.gstatic.com"
+                - "frame-ancestors 'none'"
+                - "form-action 'self'"
+                - "block-all-mixed-content"
+                - "reflected-xss block"
+                - "referrer no-referrer-when-downgrade"
+            - true
+            - 'https://report-uri.io/report/f661ff96750ba53ff257f6b5e297e820'

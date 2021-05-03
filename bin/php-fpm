@@ -1,0 +1,19 @@
+#!/bin/sh
+
+CONFIG_FILE="/etc/php-fpm.conf"
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "PHP FPM configuration file not found at ${CONFIG_FILE}" >&2
+    exit 1
+fi
+
+cat "$CONFIG_FILE" > "${CONFIG_FILE}.real"
+
+# Pass through a whitelist of environment variables.
+for var in APP_ENV APP_DEBUG APP_SECRET APP_CLOUDFRONT_SECRET FLY_APP_NAME APP_REGION APP_REDIS_CACHE_URL; do
+    if [ ! -z "$(eval "echo \${$var:-}")" ]; then
+        echo "env[${var}]=\$${var}" >> "${CONFIG_FILE}.real"
+    fi
+done
+
+exec php-fpm8 --nodaemonize --force-stderr --fpm-config "${CONFIG_FILE}.real"

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-gb">
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}Chris Smith — {% block subtitle %}Home{% endblock %}{% endblock %}</title>
+    <meta name="generator" content="Symfony 5.2">
+    <meta name="description" content="">
+    <meta name="author" content="Chris Smith">
+    <meta name="copyright" content="{%- block copyright -%}© 2006–2021 Chris Smith{%- endblock -%}">
+
+    <meta name="DC.title" content="{{ block('title') }}">
+    <meta name="DC.subject" content="Personal website of Chris Smith">
+    <meta name="DC.creator" content="Chris Smith">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" href="{{ asset('assets/glider.svg') }}">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,400italic,700">
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/main.css')}}">
+    {% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <header class="page-content" id="head">
+        <h1 class="header-heading">Chris Smith</h1>
+        <p class="header-strapline">Metal listener, software developer, gamer, and open source contributor.</p>
+        <ul class="header-shader-nav">
+            {% block header_shader_nav %}
+            {% endblock %}
+        </ul>
+    </header>
+    <main class="page-content" id="body" role="main">
+    {% block body %}{% endblock %}
+    </main>
+    <footer id="foot">
+        <div class="page-content">
+            <div class="footer-sink">
+                <p><small>{{ block('copyright') }}.</small></p>
+                <p><small>
+                    Powered by
+                    <a href="http://symfony.com/" rel="external" title="Symfony website">Symfony</a>,
+                    {{ 'PHP %u.%u'|format(constant('PHP_MAJOR_VERSION'), constant('PHP_MINOR_VERSION')) }},
+                    and friends.
+                </small></p>
+            </div>
+            {# <p><small><code>{{ '%7.7s'|format(git.sha1) }}</code></small></p> #}
+        </div>
+    </footer>
+</body>
+</html>
