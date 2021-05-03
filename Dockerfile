@@ -38,7 +38,11 @@ COPY src /srv/src
 COPY web /srv/web
 COPY templates /srv/templates
 
-RUN echo "expose_php=off" > /etc/php8/conf.d/expose.ini
+RUN ( \
+        echo "expose_php=off"; \
+        echo "session.hash_function=sha256"; \
+        echo "session.hash_bits_per_character=6"; \
+    ) > /etc/php8/conf.d/custom.ini
 
 # @todo Need to do this...
 #RUN composer dump-autoload --classmap-authoritative --no-interaction
