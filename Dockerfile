@@ -4,7 +4,7 @@ RUN : \
     && apk update \
     && apk add \
         php8-fpm php8-ctype php8-dom php8-iconv php8-intl php8-mbstring php8-opcache php8-session php8-tokenizer php8-xml \
-        caddy \
+        nginx \
         supervisor \
     && apk add --virtual .build \
         php8-cli php8-curl php8-openssl php8-phar \
@@ -31,7 +31,7 @@ COPY config /srv/config
 
 COPY supervisord.conf /etc/supervisord.conf
 COPY php-fpm.conf /etc/php-fpm.conf
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY resources/cv.json /srv/resources/
 COPY src /srv/src
@@ -47,6 +47,6 @@ HEALTHCHECK \
   --interval=10s \
   --timeout=2s \
   --start-period=2s \
-  CMD wget -O- "http://127.0.0.1/" || exit 1
+  CMD wget -O- "http://localhost/" || exit 1
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
