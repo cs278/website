@@ -2,5 +2,8 @@
     "dependencies": {
         "ionicons": "~5.5.1",
         "normalize.css": "~8.0.1"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^1.2.0"
     }
 }
