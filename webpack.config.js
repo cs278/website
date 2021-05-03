@@ -6,6 +6,12 @@ Encore
     .setManifestKeyPrefix('assets/')
     .addEntry('main', './assets/main.js')
     .addEntry('cv', './assets/cv.js')
+    .copyFiles({
+        from: './assets',
+        to: '[path][name].[hash:8].[ext]',
+        pattern: /glider\.svg$/,
+        includeSubdirectories: false,
+    })
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
