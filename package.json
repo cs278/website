@@ -4,7 +4,7 @@
         "normalize.css": "~8.0.1"
     },
     "devDependencies": {
-        "@symfony/webpack-encore": "^1.2.0",
+        "@symfony/webpack-encore": "^1.5.0",
         "file-loader": "^6.2.0"
     },
     "scripts": {
