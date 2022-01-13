@@ -27,7 +27,7 @@
         "ext-xml": "*",
         "symfony/symfony": "5.2.*",
         "symfony/monolog-bundle": "^3",
-        "justinrainbow/json-schema": "^1.6",
+        "justinrainbow/json-schema": "^5.2",
         "symfony/webpack-encore-bundle": "^1.11"
     },
     "require-dev": {
