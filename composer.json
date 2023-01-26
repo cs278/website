@@ -25,10 +25,22 @@
         "ext-session": "*",
         "ext-tokenizer": "*",
         "ext-xml": "*",
-        "symfony/symfony": "5.2.*",
-        "symfony/monolog-bundle": "^3",
+        "doctrine/annotations": "^1.14.2",
         "justinrainbow/json-schema": "^1.6",
-        "symfony/webpack-encore-bundle": "^1.11"
+        "symfony/console": "5.2.*",
+        "symfony/debug-bundle": "5.2.*",
+        "symfony/form": "5.2.*",
+        "symfony/framework-bundle": "5.2.*",
+        "symfony/http-foundation": "5.2.*",
+        "symfony/http-kernel": "5.2.*",
+        "symfony/monolog-bundle": "^3",
+        "symfony/routing": "5.2.*",
+        "symfony/security-bundle": "5.2.*",
+        "symfony/twig-bundle": "5.2.*",
+        "symfony/validator": "5.2.*",
+        "symfony/web-profiler-bundle": "5.2.*",
+        "symfony/webpack-encore-bundle": "^1.11",
+        "symfony/yaml": "5.2.*"
     },
     "require-dev": {
         "cs278/coding-standard": "^2"
@@ -51,7 +63,8 @@
         "platform": {
             "php": "8.0.0",
             "php-64bit": "8.0.0"
-        }
+        },
+        "sort-packages": true
     },
     "scripts": {
         "compile": "bin/compile",
