@@ -52,6 +52,7 @@ $kernel->boot();
 );
 
 Request::setTrustedHosts([
+    '^127\.0\.0\.1$',
     '^localhost$',
     '^cs278-website-prod\.fly\.dev$',
     '^(www\.)?cs278\.org$',
