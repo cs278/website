@@ -7,108 +7,32 @@
     "content-hash": "c38989ec06bc7370803e9df864682941",
     "packages": [
         {
-            "name": "doctrine/annotations",
-            "version": "1.12.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/annotations.git",
-                "reference": "b17c5014ef81d212ac539f07a1001832df1b6d3b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/b17c5014ef81d212ac539f07a1001832df1b6d3b",
-                "reference": "b17c5014ef81d212ac539f07a1001832df1b6d3b",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/lexer": "1.*",
-                "ext-tokenizer": "*",
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/cache": "1.*",
-                "doctrine/coding-standard": "^6.0 || ^8.1",
-                "phpstan/phpstan": "^0.12.20",
-                "phpunit/phpunit": "^7.5 || ^9.1.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Docblock Annotations Parser",
-            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/doctrine/annotations/issues",
-                "source": "https://github.com/doctrine/annotations/tree/1.12.1"
-            },
-            "time": "2021-02-21T21:00:45+00:00"
-        },
-        {
             "name": "doctrine/cache",
-            "version": "1.11.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "a9c1b59eba5a08ca2770a76eddb88922f504e8e0"
+                "reference": "1ca8f21980e770095a31456042471a57bc4c68fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/a9c1b59eba5a08ca2770a76eddb88922f504e8e0",
-                "reference": "a9c1b59eba5a08ca2770a76eddb88922f504e8e0",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/1ca8f21980e770095a31456042471a57bc4c68fb",
+                "reference": "1ca8f21980e770095a31456042471a57bc4c68fb",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.1 || ^8.0"
             },
             "conflict": {
-                "doctrine/common": ">2.2,<2.4",
-                "psr/cache": ">=3"
+                "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "alcaeus/mongo-php-adapter": "^1.1",
                 "cache/integration-tests": "dev-master",
-                "doctrine/coding-standard": "^8.0",
-                "mongodb/mongodb": "^1.1",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
-                "predis/predis": "~1.0",
-                "psr/cache": "^1.0 || ^2.0",
-                "symfony/cache": "^4.4 || ^5.2"
-            },
-            "suggest": {
-                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
+                "doctrine/coding-standard": "^9",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "symfony/cache": "^4.4 || ^5.4 || ^6",
+                "symfony/var-exporter": "^4.4 || ^5.4 || ^6"
             },
             "type": "library",
             "autoload": {
@@ -157,7 +81,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/1.11.0"
+                "source": "https://github.com/doctrine/cache/tree/2.2.0"
             },
             "funding": [
                 {
@@ -173,7 +97,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-13T14:46:17+00:00"
+            "time": "2022-05-20T20:07:39+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -381,122 +305,46 @@
             "time": "2022-10-12T20:51:15+00:00"
         },
         {
-            "name": "doctrine/lexer",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/lexer.git",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e864bbf5904cb8f5bb334f99209b48018522f042",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^6.0",
-                "phpstan/phpstan": "^0.11.8",
-                "phpunit/phpunit": "^8.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "lexer",
-                "parser",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/doctrine/lexer/issues",
-                "source": "https://github.com/doctrine/lexer/tree/1.2.1"
-            },
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Flexer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-05-25T17:44:05+00:00"
-        },
-        {
             "name": "doctrine/persistence",
-            "version": "2.1.0",
+            "version": "2.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "9899c16934053880876b920a3b8b02ed2337ac1d"
+                "reference": "7729fc2a7e5efc8bbfa408a3b8adeb8f5b84f5d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/9899c16934053880876b920a3b8b02ed2337ac1d",
-                "reference": "9899c16934053880876b920a3b8b02ed2337ac1d",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/7729fc2a7e5efc8bbfa408a3b8adeb8f5b84f5d1",
+                "reference": "7729fc2a7e5efc8bbfa408a3b8adeb8f5b84f5d1",
                 "shasum": ""
             },
             "require": {
-                "doctrine/annotations": "^1.0",
-                "doctrine/cache": "^1.0",
+                "doctrine/cache": "^1.11 || ^2.0",
                 "doctrine/collections": "^1.0",
-                "doctrine/event-manager": "^1.0",
-                "php": "^7.1 || ^8.0"
+                "doctrine/deprecations": "^0.5.3 || ^1",
+                "doctrine/event-manager": "^1 || ^2",
+                "php": "^7.1 || ^8.0",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0"
             },
             "conflict": {
-                "doctrine/common": "<2.10@dev"
+                "doctrine/annotations": "<1.0 || >=3.0",
+                "doctrine/common": "<2.10"
             },
             "require-dev": {
                 "composer/package-versions-deprecated": "^1.11",
-                "doctrine/coding-standard": "^6.0 || ^8.0",
+                "doctrine/annotations": "^1 || ^2",
+                "doctrine/coding-standard": "^9 || ^11",
                 "doctrine/common": "^3.0",
-                "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "^7.5.20 || ^8.0 || ^9.0",
-                "vimeo/psalm": "^3.11"
+                "phpstan/phpstan": "~1.4.10 || 1.9.4",
+                "phpunit/phpunit": "^7.5.20 || ^8.5 || ^9.5",
+                "symfony/cache": "^4.4 || ^5.4 || ^6.0",
+                "vimeo/psalm": "4.30.0 || 5.3.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common",
-                    "Doctrine\\Persistence\\": "lib/Doctrine/Persistence"
+                    "Doctrine\\Common\\": "src/Common",
+                    "Doctrine\\Persistence\\": "src/Persistence"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -540,9 +388,23 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/2.1.0"
+                "source": "https://github.com/doctrine/persistence/tree/2.5.6"
             },
-            "time": "2020-10-24T22:13:54+00:00"
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fpersistence",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-01-01T18:11:10+00:00"
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
@@ -698,44 +560,39 @@
         },
         {
             "name": "laminas/laminas-code",
-            "version": "4.2.1",
+            "version": "4.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "a1e7f8b6467ac7f277b8e027e8537fa13664a8d8"
+                "reference": "91aabc066d5620428120800c0eafc0411e441a62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/a1e7f8b6467ac7f277b8e027e8537fa13664a8d8",
-                "reference": "a1e7f8b6467ac7f277b8e027e8537fa13664a8d8",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/91aabc066d5620428120800c0eafc0411e441a62",
+                "reference": "91aabc066d5620428120800c0eafc0411e441a62",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-eventmanager": "^3.3",
-                "php": "^7.4 || ~8.0.0"
-            },
-            "conflict": {
-                "phpspec/prophecy": "<1.9.0"
-            },
-            "replace": {
-                "zendframework/zend-code": "self.version"
+                "php": ">=7.4, <8.2"
             },
             "require-dev": {
-                "doctrine/annotations": "^1.10.4",
+                "doctrine/annotations": "^1.13.2",
                 "ext-phar": "*",
-                "laminas/laminas-coding-standard": "^2.1.4",
-                "laminas/laminas-stdlib": "^3.3.0",
-                "phpunit/phpunit": "^9.4.2",
-                "psalm/plugin-phpunit": "^0.14.0",
-                "vimeo/psalm": "^4.3.1"
+                "laminas/laminas-coding-standard": "^2.3.0",
+                "laminas/laminas-stdlib": "^3.6.1",
+                "phpunit/phpunit": "^9.5.10",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "vimeo/psalm": "^4.13.1"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "laminas/laminas-stdlib": "Laminas\\Stdlib component",
-                "laminas/laminas-zendframework-bridge": "A bridge with Zend Framework"
+                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "polyfill/ReflectionEnumPolyfill.php"
+                ],
                 "psr-4": {
                     "Laminas\\Code\\": "src/"
                 }
@@ -765,135 +622,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-04-23T11:54:51+00:00"
-        },
-        {
-            "name": "laminas/laminas-eventmanager",
-            "version": "3.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-eventmanager.git",
-                "reference": "966c859b67867b179fde1eff0cd38df51472ce4a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-eventmanager/zipball/966c859b67867b179fde1eff0cd38df51472ce4a",
-                "reference": "966c859b67867b179fde1eff0cd38df51472ce4a",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^7.3 || ^8.0"
-            },
-            "replace": {
-                "zendframework/zend-eventmanager": "^3.2.1"
-            },
-            "require-dev": {
-                "container-interop/container-interop": "^1.1",
-                "laminas/laminas-coding-standard": "~1.0.0",
-                "laminas/laminas-stdlib": "^2.7.3 || ^3.0",
-                "phpbench/phpbench": "^0.17.1",
-                "phpunit/phpunit": "^8.5.8"
-            },
-            "suggest": {
-                "container-interop/container-interop": "^1.1, to use the lazy listeners feature",
-                "laminas/laminas-stdlib": "^2.7.3 || ^3.0, to use the FilterChain feature"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\EventManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Trigger and listen to events within a PHP application",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "event",
-                "eventmanager",
-                "events",
-                "laminas"
-            ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "docs": "https://docs.laminas.dev/laminas-eventmanager/",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-eventmanager/issues",
-                "rss": "https://github.com/laminas/laminas-eventmanager/releases.atom",
-                "source": "https://github.com/laminas/laminas-eventmanager"
-            },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
-            "time": "2021-03-08T15:24:29+00:00"
-        },
-        {
-            "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "6cccbddfcfc742eb02158d6137ca5687d92cee32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/6cccbddfcfc742eb02158d6137ca5687d92cee32",
-                "reference": "6cccbddfcfc742eb02158d6137ca5687d92cee32",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1 || ^9.3",
-                "psalm/plugin-phpunit": "^0.15.1",
-                "squizlabs/php_codesniffer": "^3.5",
-                "vimeo/psalm": "^4.6"
-            },
-            "type": "library",
-            "extra": {
-                "laminas": {
-                    "module": "Laminas\\ZendFrameworkBridge"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/autoload.php"
-                ],
-                "psr-4": {
-                    "Laminas\\ZendFrameworkBridge\\": "src//"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
-            "keywords": [
-                "ZendFramework",
-                "autoloading",
-                "laminas",
-                "zf"
-            ],
-            "support": {
-                "forum": "https://discourse.laminas.dev/",
-                "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
-                "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
-                "source": "https://github.com/laminas/laminas-zendframework-bridge"
-            },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
-            "time": "2021-02-25T21:54:58+00:00"
+            "time": "2022-11-21T01:32:31+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1812,31 +1541,33 @@
         },
         {
             "name": "symfony/webpack-encore-bundle",
-            "version": "v1.11.2",
+            "version": "v1.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/webpack-encore-bundle.git",
-                "reference": "f282fb17ffa4839ba491eb7e3f5ffdd40c86f969"
+                "reference": "1862d71e483769b40278548a30e756ce13ef9d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/f282fb17ffa4839ba491eb7e3f5ffdd40c86f969",
-                "reference": "f282fb17ffa4839ba491eb7e3f5ffdd40c86f969",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/1862d71e483769b40278548a30e756ce13ef9d4c",
+                "reference": "1862d71e483769b40278548a30e756ce13ef9d4c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
-                "symfony/asset": "^4.4 || ^5.0",
-                "symfony/config": "^4.4 || ^5.0",
-                "symfony/dependency-injection": "^4.4 || ^5.0",
-                "symfony/http-kernel": "^4.4 || ^5.0",
-                "symfony/service-contracts": "^1.0 || ^2.0"
+                "symfony/asset": "^4.4 || ^5.0 || ^6.0",
+                "symfony/config": "^4.4 || ^5.0 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0 || ^6.0",
+                "symfony/deprecation-contracts": "^2.1 || ^3.0",
+                "symfony/http-kernel": "^4.4 || ^5.0 || ^6.0",
+                "symfony/polyfill-php80": "^1.25.0",
+                "symfony/service-contracts": "^1.0 || ^2.0 || ^3.0"
             },
             "require-dev": {
-                "symfony/framework-bundle": "^4.4 || ^5.0",
-                "symfony/phpunit-bridge": "^4.4 || ^5.0",
-                "symfony/twig-bundle": "^4.4 || ^5.0",
-                "symfony/web-link": "^4.4 || ^5.0"
+                "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/phpunit-bridge": "^5.3 || ^6.0",
+                "symfony/twig-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/web-link": "^4.4 || ^5.0 || ^6.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1863,7 +1594,7 @@
             "description": "Integration with your Symfony app & Webpack Encore!",
             "support": {
                 "issues": "https://github.com/symfony/webpack-encore-bundle/issues",
-                "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.11.2"
+                "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.16.1"
             },
             "funding": [
                 {
@@ -1879,7 +1610,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-26T12:48:17+00:00"
+            "time": "2023-01-18T19:37:55+00:00"
         },
         {
             "name": "twig/twig",
@@ -2149,6 +1880,160 @@
                 "source": "https://github.com/cs278/coding-standard-php/tree/v2.0.1"
             },
             "time": "2021-05-03T21:08:22+00:00"
+        },
+        {
+            "name": "doctrine/annotations",
+            "version": "1.14.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "ad785217c1e9555a7d6c6c8c9f406395a5e2882b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/ad785217c1e9555a7d6c6c8c9f406395a5e2882b",
+                "reference": "ad785217c1e9555a7d6c6c8c9f406395a5e2882b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/lexer": "^1 || ^2",
+                "ext-tokenizer": "*",
+                "php": "^7.1 || ^8.0",
+                "psr/cache": "^1 || ^2 || ^3"
+            },
+            "require-dev": {
+                "doctrine/cache": "^1.11 || ^2.0",
+                "doctrine/coding-standard": "^9 || ^10",
+                "phpstan/phpstan": "~1.4.10 || ^1.8.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "symfony/cache": "^4.4 || ^5.4 || ^6",
+                "vimeo/psalm": "^4.10"
+            },
+            "suggest": {
+                "php": "PHP 8.0 or higher comes with attributes, a native replacement for annotations"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Docblock Annotations Parser",
+            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
+            "keywords": [
+                "annotations",
+                "docblock",
+                "parser"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/1.14.2"
+            },
+            "time": "2022-12-15T06:48:22+00:00"
+        },
+        {
+            "name": "doctrine/lexer",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/lexer.git",
+                "reference": "39ab8fcf5a51ce4b85ca97c7a7d033eb12831124"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/39ab8fcf5a51ce4b85ca97c7a7d033eb12831124",
+                "reference": "39ab8fcf5a51ce4b85ca97c7a7d033eb12831124",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/deprecations": "^1.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9 || ^10",
+                "phpstan/phpstan": "^1.3",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "^0.18.3",
+                "vimeo/psalm": "^4.11 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
+            "keywords": [
+                "annotations",
+                "docblock",
+                "lexer",
+                "parser",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/lexer/issues",
+                "source": "https://github.com/doctrine/lexer/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Flexer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-12-14T08:49:07+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
