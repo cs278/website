@@ -26,7 +26,7 @@
         "ext-tokenizer": "*",
         "ext-xml": "*",
         "doctrine/annotations": "^1.14.2",
-        "justinrainbow/json-schema": "^1.6",
+        "justinrainbow/json-schema": "^5.2",
         "symfony/console": "5.4.*",
         "symfony/debug-bundle": "5.4.*",
         "symfony/form": "5.4.*",
