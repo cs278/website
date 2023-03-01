@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "ionicons": "~5.5.1",
+        "ionicons": "~6.1.3",
         "normalize.css": "~8.0.1"
     },
     "devDependencies": {
